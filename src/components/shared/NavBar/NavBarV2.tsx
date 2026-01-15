@@ -32,12 +32,12 @@ const NavBarV2 = () => {
           placeholder="Search"
           className="w-full max-w-sm"
               />
-              <div className="w-0.5 h-8 bg-black/15"></div>
+              <div className="w-0.5 h-7 bg-black/10"></div>
 
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-icon shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-white/30 text-icon shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
             aria-label="Open messages"
           >
             <Image src={messageIcon} alt="Message icon" />
@@ -45,7 +45,7 @@ const NavBarV2 = () => {
 
           <button
             type="button"
-            className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-[] shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
+            className="relative flex h-9 w-9 items-center justify-center rounded-full bg-white/30 text-[] shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
             aria-label="View notifications"
           >
             <Bell className="h-5 w-5" />
@@ -54,7 +54,7 @@ const NavBarV2 = () => {
 
           <Link
             href="/profile"
-            className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-white"
+            className="relative h-9 w-9 overflow-hidden rounded-full ring-white"
             aria-label="Open profile"
           >
             <Image

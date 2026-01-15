@@ -172,6 +172,7 @@ export default function RootLayout({
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
+                className="px-4"
               >
                 {children}
               </div>

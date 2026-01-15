@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Bell, MessageCircle } from "lucide-react";
+import { Bell } from "lucide-react";
 import Logo from "../logo/Logo";
 import SearchInput from "@/src/components/ui/input/SearchInput";
+import messageIcon from "@/src/assets/icon/message.svg";
 
 const NavBarV2 = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -30,20 +31,21 @@ const NavBarV2 = () => {
           onChange={setSearchValue}
           placeholder="Search"
           className="w-full max-w-sm"
-        />
+              />
+              <div className="w-0.5 h-8 bg-black/15"></div>
 
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-700 shadow"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-icon shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
             aria-label="Open messages"
           >
-            <MessageCircle className="h-5 w-5" />
+            <Image src={messageIcon} alt="Message icon" />
           </button>
 
           <button
             type="button"
-            className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-700 shadow"
+            className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-[] shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]"
             aria-label="View notifications"
           >
             <Bell className="h-5 w-5" />

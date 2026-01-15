@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import ReduxStoreProvider from "@/src/redux/ReduxStoreProvider";
 import { Toaster } from "sonner";
+import bg from "@/src/assets/images/home/bg01.png";
 
 export const metadata: Metadata = {
   // Basic Info
@@ -164,7 +165,17 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <ReduxStoreProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <div className="bg-white dark:bg-black">{children}</div>
+            <div className="bg-primary-background dark:bg-black">
+              <div
+                style={{
+                  backgroundImage: `url(${bg.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {children}
+              </div>
+            </div>
             <Toaster />
           </ThemeProvider>
         </ReduxStoreProvider>

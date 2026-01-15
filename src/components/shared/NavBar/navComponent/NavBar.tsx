@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/src/redux/store";
 import { Button } from "@/src/components/ui/button/Button";
 import Logo from "../../logo/Logo";
-import UserDropdown from "../UserDropdown";
+// import UserDropdown from "../UserDropdown";
 
 const NavBar = () => {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -40,9 +40,7 @@ const NavBar = () => {
       label: "Register",
       onClick: () => console.log("Register clicked"),
       component: user ? (
-        <div className="max-lg:hidden">
-          <UserDropdown />
-        </div>
+        <div className="max-lg:hidden">{/* <UserDropdown /> */}</div>
       ) : (
         <div className="flex max-md:flex-col gap-2">
           <Link href="/register">
@@ -64,14 +62,14 @@ const NavBar = () => {
   return (
     <div className="mb-16 lg:mb-20">
       <Navbar
-        className="max-w-[1920px]  mx-auto sm:px-[1.5%]"
+        className="max-w-screen-2xl mx-auto sm:px-[1.5%]"
         position="fixed"
-        shadow="shadow-xl"
-        backgroundColor="bg-[#0F172A] lg:py-4"
+        shadow="shadow-sm"
+        backgroundColor="bg-gradient-to-r from-[#e9f0fe] to-[#d9e6ff]"
         logo={<Logo />}
-        activeTextColor="text-primary hover:text-primary-hover! font-semibold"
-        textColor="text-dark  font-semibold"
-        hoverTextColor="hover:text-white/80"
+        activeTextColor="text-blue-700 font-semibold"
+        textColor="text-slate-800 font-semibold"
+        hoverTextColor="hover:text-slate-700"
         navItems={navItems}
         buttons={buttons}
         hideOnScroll

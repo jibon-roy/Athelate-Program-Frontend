@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/src/assets/icon/Logo.png";
 
 const Logo = () => {
   return (
-    <div className="flex-shrink-0">
+    <div className="shrink-0">
       <Link href="/">
         <Image
           src={logo}
           alt="Logo"
           width={logo.width}
           height={logo.height}
-          className="w-[82px] h-auto"
+          className="w-20.5 h-auto"
         />
       </Link>
     </div>

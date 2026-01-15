@@ -24,6 +24,10 @@ export interface NavbarProps {
   navDivider?: boolean;
   logo?: string | ReactNode;
   navItems?: NavItem[];
+  showSearch?: boolean;
+  searchPlaceholder?: string;
+  initialSearchValue?: string;
+  onSearchChange?: (value: string) => void;
   buttons?: NavButton[];
   mobileBreakpoint?: "sm" | "md" | "lg" | "xl" | "2xl";
   position?: "fixed" | "sticky" | "relative" | "absolute";

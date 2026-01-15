@@ -12,11 +12,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-background: #E7F2F5;
 }
 
 @theme {
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-primary-background: var(--primary-background);
 }
 
 /* Class- or attribute-driven dark mode (overrides variables) */

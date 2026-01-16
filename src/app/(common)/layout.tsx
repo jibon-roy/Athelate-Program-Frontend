@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           <div>
             <Sidebar />
           </div>
-          <div className="flex-1 mt-3">{children}</div>
+          <div className="flex-1">{children}</div>
         </div>
       </div>
     </>

@@ -4,27 +4,28 @@ import { cn } from "@/src/lib/utils";
 
 // Button variant styles using cva (class-variance-authority)
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center rounded-lg font-semibold text-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center font-semibold transition-colors focus:outline-none active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
-        primary: "bg-secondary hover:bg-primary text-white",
-        secondary: "bg-primary hover:bg-secondary text-white",
-        accent: "bg-pink-500 hover:bg-pink-600 text-white",
-        ghost: "bg-transparent hover:bg-gray-100 text-gray-900",
-        link: "bg-transparent hover:bg-transparent text-primary underline",
+        primary:
+          "bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 hover:bg-linear-to-b hover:from-primary-button-bg2 hover:to-primary-button-bg1 active:bg-linear-to-b active:from-primary-button-bg2 active:to-primary-button-bg1 text-white rounded-full border-primary-button-border",
+        secondary: "bg-primary hover:bg-secondary text-white rounded-lg",
+        accent: "bg-pink-500 hover:bg-pink-600 text-white rounded-lg",
+        ghost: "bg-transparent hover:bg-gray-100 text-gray-900 rounded-lg",
+        link: "bg-transparent hover:bg-transparent text-primary underline rounded-lg",
         outline:
-          "bg-transparent border-2 border-dark text-dark hover:border-dark/80 hover:text-dark/80",
+          "bg-transparent border-2 border-dark text-dark hover:border-dark/80 hover:text-dark/80 rounded-lg",
         border:
-          "border border-primary text-primary hover:bg-primary hover:text-white",
+          "border border-primary text-primary hover:bg-primary hover:text-white rounded-lg",
         "border-secondary":
-          "border border-secondary text-secondary hover:bg-secondary hover:text-white",
+          "border border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg",
       },
       size: {
-        default: "px-8 py-2",
-        sm: "px-4 py-1 text-sm",
-        md: "px-6 py-2 text-md",
-        lg: "px-10 py-3 text-lg",
+        default: "px-8 py-2.5 text-base",
+        sm: "px-4 py-1.5 text-sm",
+        md: "px-6 py-2 text-base",
+        lg: "px-12 py-3 text-lg",
       },
     },
     defaultVariants: {

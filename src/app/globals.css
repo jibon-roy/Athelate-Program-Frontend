@@ -17,7 +17,10 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-background: #e7f2f5;
-  --icon: #595F70;
+  --icon: #595f70;
+  --primary-button-bg1: #5c8ff7;
+  --primary-button-bg2: #276aee;
+  --primary-button-border: #1556d834;
 }
 
 @theme {
@@ -25,6 +28,9 @@
   --color-background: var(--background);
   --color-primary-background: var(--primary-background);
   --color-icon: var(--icon);
+  --color-primary-button-bg1: var(--primary-button-bg1);
+  --color-primary-button-bg2: var(--primary-button-bg2);
+  --color-primary-button-border: var(--primary-button-border);
 }
 
 /* Class- or attribute-driven dark mode (overrides variables) */
@@ -35,6 +41,9 @@ html.dark,
   --foreground: #ededed;
   --primary-background: #1a1a1a;
   --icon: #a3aaba;
+  --primary-button-bg1: #5c8ff7;
+  --primary-button-bg2: #276aee;
+  --primary-button-border: #1556d834;
 }
 
 body {

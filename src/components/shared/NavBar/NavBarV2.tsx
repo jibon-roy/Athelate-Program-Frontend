@@ -13,7 +13,7 @@ const NavBarV2 = () => {
 
   return (
     <nav className="w-full">
-      <div className="mx-auto flex w-full max-w-screen-2xl items-center gap-4 px-4 py-3">
+      <div className="mx-auto flex w-full max-w-screen-2xl items-center gap-4 px-4 py-5">
         <div className="flex items-center gap-3">
           <Logo />
         </div>

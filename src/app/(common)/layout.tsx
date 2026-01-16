@@ -8,9 +8,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <>
       <div className="max-w-screen-2xl mx-auto">
         <NavBarV2 />
-        <div>
-          <Sidebar />
-          {children}
+        <div className="flex gap-6">
+          <div>
+            <Sidebar />
+          </div>
+          <div className="flex-1 mt-3">{children}</div>
         </div>
       </div>
     </>

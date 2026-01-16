@@ -48,21 +48,27 @@ const RecentActivities = () => {
   ]);
 
   return (
-    <div className="bg-white/40 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]  rounded-2xl p-5 min-h-96 mb-6">
+    <div className="bg-white/40 w-full shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)] rounded-2xl p-4 md:p-5 mb-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-3">
-          <h3 className="text-xl font-bold text-gray-900">Recent Activity</h3>
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div className="flex items-center gap-2 md:gap-3">
+          <h3 className="text-lg md:text-xl font-bold text-gray-900">
+            Recent Activity
+          </h3>
           <span className="flex items-center gap-1 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
             <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
             LIVE
           </span>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <button className="p-2 bg-white/60 rounded-full hover:bg-white/80 transition">
-       <HiOutlineAdjustmentsVertical className="text-gray-700 text-lg" />
+            <HiOutlineAdjustmentsVertical className="text-gray-700 text-lg" />
           </button>
-          <Button variant="primary" size="default" className="text-sm">
+          <Button
+            variant="primary"
+            size="default"
+            className="text-xs md:text-sm whitespace-nowrap"
+          >
             View More
           </Button>
         </div>
@@ -71,7 +77,10 @@ const RecentActivities = () => {
       {/* Activities List */}
       <div className="space-y-4">
         {activities.map((activity) => (
-          <div key={activity.id} className="flex hover:bg-white/40 p-2 rounded-xl gap-4">
+          <div
+            key={activity.id}
+            className="flex hover:bg-white/40 p-2 rounded-xl gap-4"
+          >
             {/* Icon */}
             <div className="w-10 h-10 rounded-full bg-linear-to-br from-blue-400 to-blue-600 flex items-center justify-center shrink-0">
               <span className="text-white font-bold text-lg">

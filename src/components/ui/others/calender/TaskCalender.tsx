@@ -123,7 +123,7 @@ const TaskCalender = () => {
   }, [currentDate]);
 
   return (
-    <div className="w-full rounded-2xl bg-white/30 p-5 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
+    <div className="w-full rounded-2xl max-w-5xl bg-white/30 p-5 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-semibold text-slate-900">Todays tasks</h2>

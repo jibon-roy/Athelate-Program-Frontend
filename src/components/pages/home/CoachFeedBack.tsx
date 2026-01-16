@@ -70,11 +70,17 @@ const CoachFeedBack = () => {
   };
 
   return (
-    <div className="bg-white/40 shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)]  rounded-2xl p-6 min-h-96">
+    <div className="bg-white/40 w-full shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)] rounded-2xl p-4 md:p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-bold text-gray-900">Coach Feedback</h3>
-        <Button variant="primary" size="default" className="text-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <h3 className="text-lg md:text-xl font-bold text-gray-900">
+          Coach Feedback
+        </h3>
+        <Button
+          variant="primary"
+          size="default"
+          className="text-xs md:text-sm whitespace-nowrap"
+        >
           View More
         </Button>
       </div>

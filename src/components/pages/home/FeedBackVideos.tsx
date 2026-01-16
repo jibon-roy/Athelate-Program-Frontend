@@ -71,12 +71,14 @@ const FeedBackVideos = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl">
-      <div className="mb-6 flex gap-6 items-center justify-between">
-        <h2 className="text-2xl font-bold text-black mb-2">
+    <div className="w-full">
+      <div className="mb-6 flex flex-wrap gap-3 items-center justify-between">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black">
           Continue Where You Left off
         </h2>
-        <Button variant="primary">View All </Button>
+        <Button variant="primary" className="text-sm whitespace-nowrap">
+          View All{" "}
+        </Button>
       </div>
 
       {/* Video Grid with Drag to Scroll */}
@@ -90,9 +92,13 @@ const FeedBackVideos = () => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div className="grid w-270 grid-cols-4 gap-6">
+        <div className="flex gap-4 md:gap-6">
           {videos.map((video, index) => (
-            <div key={index} onMouseDown={(e) => e.preventDefault()}>
+            <div
+              key={index}
+              className="shrink-0 w-62.5 md:w-70"
+              onMouseDown={(e) => e.preventDefault()}
+            >
               <VideoCard
                 title={video.title}
                 thumbnail={video.thumbnail}

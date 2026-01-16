@@ -69,13 +69,14 @@ const Announcements = () => {
           View More
         </Button>
       </div>
-<div className="p-5">
-      {/* Announcements List */}
-      <div className="space-y-4">
-        {announcements.map((announcement) => (
-          <AnnouncementCard key={announcement.id} {...announcement} />
-        ))}
-      </div></div>
+      <div className="p-5">
+        {/* Announcements List */}
+        <div className="space-y-4">
+          {announcements.map((announcement) => (
+            <AnnouncementCard key={announcement.id} {...announcement} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

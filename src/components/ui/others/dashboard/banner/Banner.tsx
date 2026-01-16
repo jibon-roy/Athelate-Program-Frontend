@@ -16,16 +16,16 @@ const Banner = () => {
       <div className="absolute inset-0 bg-linear-to-t from-white via-white/0 to-transparent"></div>
 
       {/* Content */}
-      <div className="relative  z-10 flex flex-col justify-between p-8 h-full">
+      <div className="relative  z-10 flex flex-col justify-between p-4 md:p-8 h-full">
         {/* Left side - Title and States */}
-        <div className="flex-1 mb-20">
-          <h1 className="text-5xl font-bold text-white mb-2">
+        <div className="flex-1 mb-5 md:mb-20">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-2">
             The QB Fundamentals
           </h1>
 
           {/* Banner States */}
         </div>
-        <div className="flex">
+        <div className="md:flex">
           <div className="mt-8 flex-1 self-end">
             <BannerStates />
           </div>

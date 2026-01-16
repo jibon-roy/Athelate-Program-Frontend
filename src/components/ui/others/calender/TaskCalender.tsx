@@ -6,7 +6,6 @@ import { IoIosArrowRoundUp } from "react-icons/io";
 import { BiSolidBell } from "react-icons/bi";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 
-
 interface TaskItem {
   id: number;
   title: string;
@@ -123,22 +122,44 @@ const TaskCalender = () => {
   }, [currentDate]);
 
   return (
-    <div className="w-full rounded-2xl max-w-5xl bg-white/30 p-5 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
+    <div className="w-full rounded-2xl max-w-5xl bg-white/30 p-3 sm:p-4 md:p-5 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-semibold text-slate-900">Todays tasks</h2>
-        <Button variant="primary">View Entire Schedule</Button>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 md:mb-6">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900">
+          Todays tasks
+        </h2>
+        <Button variant="primary" className="text-xs sm:text-sm">
+          View Entire Schedule
+        </Button>
       </div>
 
       {/* Week Days */}
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex items-center overflow-x-auto gap-1 sm:gap-2 md:gap-3 scrollbar-hide md:scrollbar-default pb-2">
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          @media (min-width: 768px) {
+            .scrollbar-default::-webkit-scrollbar {
+              display: block;
+            }
+            .scrollbar-default {
+              -ms-overflow-style: auto;
+              scrollbar-width: auto;
+            }
+          }
+        `}</style>
         {weekDays.map((day, index) => (
           <div
             key={index}
-            className="flex flex-col items-center flex-1 relative"
+            className="flex flex-col items-center shrink-0 relative min-w-15 sm:min-w-17.5 md:flex-1"
           >
             <div
-              className={`w-full flex flex-col items-center px-3 py-3 rounded-2xl transition-all cursor-pointer ${
+              className={`w-full flex flex-col items-center px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl md:rounded-2xl transition-all cursor-pointer ${
                 day.isToday
                   ? "bg-white shadow-lg shadow-primary-button-bg1/30"
                   : "bg-white/50 hover:bg-slate-50/50"
@@ -146,7 +167,7 @@ const TaskCalender = () => {
             >
               {/* Day Label */}
               <span
-                className={`text-base font-semibold mb-2 ${
+                className={`text-xs sm:text-sm md:text-base font-semibold mb-1 sm:mb-1.5 md:mb-2 ${
                   day.isToday ? "text-[#141B34]" : "text-[#141B34]"
                 }`}
               >
@@ -155,7 +176,7 @@ const TaskCalender = () => {
 
               {/* Date */}
               <span
-                className={`text-base mb-3 ${
+                className={`text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 ${
                   day.isToday ? "text-[#141B34]" : "text-[#141B34]"
                 }`}
               >
@@ -166,7 +187,7 @@ const TaskCalender = () => {
             {/* Task Indicator Dot - positioned below */}
             {day.hasTask && (
               <div
-                className={`w-2.5 h-2.5 absolute right-3 top-1 rounded-full mt-2 ${
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 absolute right-1.5 sm:right-2 md:right-3 top-1 rounded-full mt-2 ${
                   day.taskColor === "blue"
                     ? "bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 shadow-md"
                     : "bg-linear-to-b from-[#FDB631] to-[#EC4213]"
@@ -178,36 +199,36 @@ const TaskCalender = () => {
       </div>
 
       {/* Task List */}
-      <div className="mt-8 space-y-3">
+      <div className="mt-4 sm:mt-6 md:mt-8 space-y-2 sm:space-y-3">
         {tasks.map((task, idx) => (
           <div
             key={task.id}
-            className={`flex items-center justify-between p-4 rounded-2xl ${
+            className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl gap-3 sm:gap-0 ${
               idx === 0 ? "bg-white" : ""
             } hover:bg-white transition-colors`}
           >
             {/* Left Section: Indicator + Task Info */}
-            <div className="flex items-center gap-4 flex-1 min-w-0">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0 w-full sm:w-auto">
               {/* Status Indicator */}
 
               {/* Task Info */}
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="text-base font-semibold text-slate-900">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
+                  <h3 className="text-sm sm:text-base font-semibold text-slate-900">
                     {task.title}
                   </h3>
                   {task.status === "live" && (
-                    <span className="px-2 py-0.5 text-xs font-semibold text-red-600 bg-red-100 rounded">
+                    <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-semibold text-red-600 bg-red-100 rounded">
                       Live
                     </span>
                   )}
                   {task.id === 1 && (
-                    <span className="px-2 py-0.5 text-xs font-medium text-gray-600 bg-gray-100 rounded whitespace-nowrap">
+                    <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-medium text-gray-600 bg-gray-100 rounded whitespace-nowrap">
                       Video Submission Required
                     </span>
                   )}
                 </div>
-                <div className="text-sm flex gap-1 text-gray-600">
+                <div className="text-xs sm:text-sm flex gap-1 text-gray-600">
                   {" "}
                   {task.status === "live" ? (
                     <div className="flex items-center justify-center w-3">
@@ -224,9 +245,9 @@ const TaskCalender = () => {
             </div>
 
             {/* Right Section: Status + Button */}
-            <div className="flex items-center gap-5 ml-4">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-5 sm:ml-4 w-full sm:w-auto">
               {/* Status Text with Icon */}
-              <div className="flex items-center gap-2 text-sm text-gray-600 min-w-30 justify-start">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-600 min-w-20 sm:min-w-30 justify-start">
                 {task.status === "due" && (
                   <>
                     <svg
@@ -298,10 +319,16 @@ const TaskCalender = () => {
               </div>
 
               {/* Action Button */}
-              <div className="w-36 flex justify-end">
-                <Button variant={task.actionButton.variant} size="sm">
+              <div className="flex-1 sm:flex-initial sm:w-28 md:w-36 flex justify-end">
+                <Button
+                  variant={task.actionButton.variant}
+                  size="sm"
+                  className="text-xs sm:text-sm w-full sm:w-auto"
+                >
                   {task.actionButton.icon && (
-                    <div className="mr-2">{task.actionButton.icon}</div>
+                    <div className="mr-1.5 sm:mr-2">
+                      {task.actionButton.icon}
+                    </div>
                   )}
                   {task.actionButton.text}
                 </Button>

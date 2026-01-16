@@ -38,23 +38,31 @@ const others: ListEntry[] = [
 ];
 
 function TopCard({ item }: { item: TopEntry }) {
+  const isTop = item.rank === 1;
+  const containerWidth = isTop
+    ? "w-[40%] md:w-[36%] lg:w-[34%]"
+    : "w-[28%] md:w-[26%] lg:w-[24%]";
+  const imageSizes = isTop
+    ? "(max-width: 768px) 60vw, 30vw"
+    : "(max-width: 768px) 40vw, 20vw";
+
   return (
-    <div className="flex flex-col items-center w-[30%] md:w-[28%] lg:w-[26%]">
-      <div className="relative w-full shadow-lg overflow-hidden">
+    <div className={`flex flex-col items-center ${containerWidth}`}>
+      <div className="relative w-full  overflow-hidden">
         <Image
           src={item.image}
           alt={`${item.name} rank ${item.rank}`}
-          sizes="(max-width: 768px) 40vw, 20vw"
+          sizes={imageSizes}
           className="w-full h-auto"
         />
       </div>
       <div className="mt-3 text-center">
-        <p className="text-sm md:text-base font-semibold text-gray-900 dark:text-white">
+        {/* <p className="text-sm md:text-base font-semibold text-gray-900 dark:text-white">
           {item.name}
         </p>
         <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
           {item.points} points
-        </p>
+        </p> */}
       </div>
     </div>
   );
@@ -64,22 +72,22 @@ function ListRow({ entry }: { entry: ListEntry }) {
   return (
     <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-white/60 dark:bg-white/10 shadow-sm">
       <div className="flex items-center gap-3">
+      #{entry.rank}
         <div className="relative w-10 h-10 md:w-12 md:h-12">
-          {/* Diamond avatar */}
-          <div className="absolute inset-0 rotate-45 overflow-hidden rounded-lg">
+          {/* Diamond avatar with colored border */}
+          <div className="absolute inset-0 rotate-45 rounded-lg bg-white border-4 border-[#6CB3FF]"></div>
+          <div className="absolute inset-1 rotate-45 overflow-hidden">
             <Image
               src={entry.avatar}
               alt={`${entry.name} avatar`}
               fill
               sizes="50px"
-              className="object-cover -rotate-45"
+              className="object-cover scale-125 -rotate-45"
             />
           </div>
         </div>
         <div>
-          <p className="text-sm md:text-base font-medium">
-            #{entry.rank} {entry.name}
-          </p>
+          <p className="text-sm md:text-base font-medium">{entry.name}</p>
           <p className="text-xs md:text-sm text-gray-500">
             {entry.points} points
           </p>
@@ -90,8 +98,13 @@ function ListRow({ entry }: { entry: ListEntry }) {
 }
 
 const LeaderBoardV2 = () => {
+  const orderedTop: TopEntry[] = [
+    topThree.find((t) => t.rank === 2)!,
+    topThree.find((t) => t.rank === 1)!,
+    topThree.find((t) => t.rank === 3)!,
+  ];
   return (
-    <section className="w-full">
+    <section className="w-full p-5 rounded-2xl max-w-5xl bg-white/30 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
@@ -103,12 +116,12 @@ const LeaderBoardV2 = () => {
       {/* Top 3 section with background */}
       <div className="rounded-3xl overflow-hidden shadow-lg relative">
         {/* Background will be added here */}
-        <div className="relative bg-linear-to-b from-blue-50 to-blue-200/50 dark:from-blue-950/30 dark:to-blue-900/10 p-6 md:p-8">
-          <p className="text-center text-xs md:text-sm text-gray-600 mb-6 font-medium">
+        <div className="relative bg-linear-to-b from-blue-50 to-blue-200/50 p-6 md:p-8">
+          <p className="text-center text-lg  text-black font-medium">
             Jan 2025
           </p>
           <div className="flex items-end justify-between gap-2 md:gap-4">
-            {topThree.map((t) => (
+            {orderedTop.map((t) => (
               <TopCard key={t.rank} item={t} />
             ))}
           </div>

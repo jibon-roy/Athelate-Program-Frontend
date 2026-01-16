@@ -100,14 +100,14 @@ const CoachFeedBack = () => {
             {/* Feedback Content */}
             <div className="flex-1">
               {/* Coach Name and Stars */}
-              <div className="flex items-start justify-between mb-2">
+              <div className="flex items-start justify-between max-sm:flex-wrap gap-3 mb-2">
                 <div>
                   <h4 className="text-gray-900 font-semibold">
                     {feedback.coachName}
                   </h4>
                   <p className="text-gray-500 text-sm">{feedback.time}</p>
                 </div>
-                <div className="ml-4">{renderStars(feedback.rating)}</div>
+                <div className="sm:ml-4">{renderStars(feedback.rating)}</div>
               </div>
 
               {/* Feedback Message */}

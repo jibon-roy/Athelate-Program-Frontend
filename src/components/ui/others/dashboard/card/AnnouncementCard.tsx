@@ -84,7 +84,7 @@ const AnnouncementCard = ({
               <span key={index}>
                 <a
                   href="#"
-                  className="text-[#276AEE] font-semibold hover:underline"
+                  className="text-[#276AEE]  hover:underline"
                 >
                   {coach}
                 </a>
@@ -111,7 +111,7 @@ const AnnouncementCard = ({
 
       {/* Actions Row */}
       <div className="flex items-center justify-between pt-3 border-t border-gray-200">
-        <div className="flex w-full items-center gap-3 md:gap-4">
+        <div className="flex w-full max-md:flex-wrap items-center gap-3 md:gap-4">
           <div className="flex flex-1 items-center gap-2">
             {isLive && (
               <button className="flex items-center gap-2 bg-linear-to-r from-[#FF6565] to-[#EC4213] hover:bg-red-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors">

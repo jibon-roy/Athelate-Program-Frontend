@@ -26,14 +26,13 @@ const navItems = [
   { id: "home-alt", icon: Home },
   { id: "support", icon: Headset },
   { id: "team", icon: Users },
-    { id: "settings", icon: Settings },
-  
+  { id: "settings", icon: Settings },
 ];
 
 const Sidebar = () => {
   return (
-    <aside className="flex sticky top-5 h-[calc(100vh-170px)] max-h-fit items-center">
-      <div className="flex h-auto w-18 flex-col items-center justify-between rounded-2xl bg-white/5 py-5 border border-black">
+    <aside className="flex sticky top-5 min-h-0 items-center">
+      <div className="flex hide-scrollbar h-fit max-h-[calc(100vh-2.5rem)] w-14 md:w-18 flex-col items-center justify-between rounded-2xl bg-white/5 py-3 md:py-5 border border-black overflow-y-auto">
         <div className="flex flex-col items-center gap-5">
           {navItems.map(({ id, icon: Icon, active }) => (
             <button

@@ -8,7 +8,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <>
       <div className="max-w-screen-2xl mx-auto">
         <NavBarV2 />
-        <div className="flex gap-6">
+        <div className="flex gap-4 md:gap-6">
           <div>
             <Sidebar />
           </div>

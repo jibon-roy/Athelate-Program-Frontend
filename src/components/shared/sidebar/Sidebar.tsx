@@ -32,7 +32,7 @@ const navItems = [
 
 const Sidebar = () => {
   return (
-    <aside className="flex sticky top-5 h-full items-center">
+    <aside className="flex sticky top-5 h-[calc(100vh-170px)] max-h-fit items-center">
       <div className="flex h-auto w-18 flex-col items-center justify-between rounded-2xl bg-white/5 py-5 border border-black">
         <div className="flex flex-col items-center gap-5">
           {navItems.map(({ id, icon: Icon, active }) => (

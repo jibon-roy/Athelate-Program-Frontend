@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { FaCirclePlay } from "react-icons/fa6";
 
 interface VideoCardProps {
   title: string;
@@ -19,7 +20,7 @@ const VideoCard = ({
   isCompleted = false,
 }: VideoCardProps) => {
   return (
-    <div className="w-full max-w-sm p-3 rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-xl transition-shadow">
+    <div className="w-full shadow-[#b2ccff7e] max-w-sm p-3 rounded-2xl overflow-hidden bg-white/40 hover:bg-white mb-6 hover:shadow-lg transition-shadow">
       {/* Video Thumbnail */}
       <div className="relative aspect-video w-full h-32 rounded-xl bg-gray-200 overflow-hidden">
         <Image
@@ -29,15 +30,9 @@ const VideoCard = ({
           className="object-cover hover:scale-105 transition-transform duration-300"
         />
         {/* Play button overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors">
-          <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg">
-            <svg
-              className="w-6 h-6 text-blue-600 ml-1"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
+        <div className="absolute cursor-pointer inset-0 flex items-center justify-center bg-black/0 hover:bg-black/40 transition-colors">
+          <div className="bg-white/10 shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)] backdrop-blur-xs p-1 rounded-full">
+            <FaCirclePlay className="text-white text-3xl" />
           </div>
         </div>
       </div>
@@ -66,12 +61,21 @@ const VideoCard = ({
 
         {/* Status and Due Date */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center">
+          <div className="flex items-center gap-1">
+            {/* <div className="w-4 h-4 rounded-full border-2 border-blue-600 flex items-center justify-center">
               {isCompleted ? (
                 <div className="w-2 h-2 bg-blue-600 rounded-full" />
               ) : null}
-            </div>
+            </div> */}
+            {isCompleted ? (
+              <div className="flex items-center justify-center w-3">
+                <div className="w-2.5 h-2.5 rounded-sm bg-linear-to-b from-[#F7E75C] to-[#CC7B1F] border border-[#F7E75C] shrink-0"></div>
+              </div>
+            ) : (
+              <div className="flex items-center justify-center w-3">
+                <div className="w-2.5 h-2.5 rounded-sm bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 border border-primary-button-bg1 shrink-0"></div>
+              </div>
+            )}
             <span className="text-xs font-medium text-slate-600">
               {progress}% Complete
             </span>

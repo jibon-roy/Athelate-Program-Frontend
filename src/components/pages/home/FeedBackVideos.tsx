@@ -1,8 +1,11 @@
 "use client";
 
-import React from "react";
-import VideoCard from "@/src/components/ui/others/dashboard/card/VideoCard";
+import React, { useRef, useState } from "react";
+import VideoCard from "../../ui/others/dashboard/card/VideoCard";
 import { Button } from "../../ui/button/Button";
+import f0 from "@/src/assets/images/card/f0.png";
+import f1 from "@/src/assets/images/card/f1.png";
+import f2 from "@/src/assets/images/card/f2.png";
 
 interface VideoData {
   title: string;
@@ -13,40 +16,62 @@ interface VideoData {
 }
 
 const FeedBackVideos = () => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [scrollStart, setScrollStart] = useState(0);
+
   // Sample video data - replace with actual data from API
   const videos: VideoData[] = [
     {
       title: "Review Approach Feedback",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: f0.src,
       progress: 70,
       dueDate: "Today",
       isCompleted: false,
     },
     {
       title: "Footwork Fundamentals",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: f1.src,
       progress: 100,
       dueDate: "2 days ago",
       isCompleted: true,
     },
     {
       title: "Throwing Mechanics",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: f2.src,
       progress: 45,
       dueDate: "Tomorrow",
       isCompleted: false,
     },
     {
       title: "Decision Making Drill",
-      thumbnail: "/api/placeholder/300/200",
+      thumbnail: f1.src,
       progress: 85,
       dueDate: "In 3 days",
       isCompleted: false,
     },
   ];
 
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    setScrollStart(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !scrollContainerRef.current) return;
+    const diff = e.clientX - dragStart;
+    scrollContainerRef.current.scrollLeft = scrollStart - diff;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
-    <div className="w-full">
+    <div className="w-full max-w-5xl">
       <div className="mb-6 flex gap-6 items-center justify-between">
         <h2 className="text-2xl font-bold text-black mb-2">
           Continue Where You Left off
@@ -54,18 +79,30 @@ const FeedBackVideos = () => {
         <Button variant="primary">View All </Button>
       </div>
 
-      {/* Video Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {videos.map((video, index) => (
-          <VideoCard
-            key={index}
-            title={video.title}
-            thumbnail={video.thumbnail}
-            progress={video.progress}
-            dueDate={video.dueDate}
-            isCompleted={video.isCompleted}
-          />
-        ))}
+      {/* Video Grid with Drag to Scroll */}
+      <div
+        ref={scrollContainerRef}
+        className={`overflow-x-auto hide-scrollbar ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <div className="grid w-270 grid-cols-4 gap-6">
+          {videos.map((video, index) => (
+            <div key={index} onMouseDown={(e) => e.preventDefault()}>
+              <VideoCard
+                title={video.title}
+                thumbnail={video.thumbnail}
+                progress={video.progress}
+                dueDate={video.dueDate}
+                isCompleted={video.isCompleted}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

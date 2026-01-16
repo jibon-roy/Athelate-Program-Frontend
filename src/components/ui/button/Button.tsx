@@ -10,7 +10,8 @@ const buttonVariants = cva(
       variant: {
         primary:
           "bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 hover:bg-linear-to-b hover:from-primary-button-bg2 hover:to-primary-button-bg1 active:bg-linear-to-b active:from-primary-button-bg2 active:to-primary-button-bg1 text-white rounded-full border-primary-button-border",
-        secondary: "bg-primary hover:bg-secondary text-white rounded-lg",
+        secondary:
+          "bg-linear-to-b from-secondary-button-bg1 to-secondary-button-bg2 hover:bg-linear-to-b hover:from-secondary-button-bg2 hover:to-secondary-button-bg1 active:bg-linear-to-b active:from-secondary-button-bg2 active:to-secondary-button-bg1 text-white rounded-full border-secondary-button-border",
         accent: "bg-pink-500 hover:bg-pink-600 text-white rounded-lg",
         ghost: "bg-transparent hover:bg-gray-100 text-gray-900 rounded-lg",
         link: "bg-transparent hover:bg-transparent text-primary underline rounded-lg",

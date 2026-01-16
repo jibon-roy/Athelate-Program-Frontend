@@ -21,6 +21,9 @@
   --primary-button-bg1: #5c8ff7;
   --primary-button-bg2: #276aee;
   --primary-button-border: #1556d834;
+  --secondary-button-bg1: #DDDDDD;
+  --secondary-button-bg2: #919893;
+  --secondary-button-border: #CACACA;
 }
 
 @theme {
@@ -31,6 +34,9 @@
   --color-primary-button-bg1: var(--primary-button-bg1);
   --color-primary-button-bg2: var(--primary-button-bg2);
   --color-primary-button-border: var(--primary-button-border);
+  --color-secondary-button-bg1: var(--secondary-button-bg1);
+  --color-secondary-button-bg2: var(--secondary-button-bg2);
+  --color-secondary-button-border: var(--secondary-button-border);
 }
 
 /* Class- or attribute-driven dark mode (overrides variables) */
@@ -44,6 +50,9 @@ html.dark,
   --primary-button-bg1: #5c8ff7;
   --primary-button-bg2: #276aee;
   --primary-button-border: #1556d834;
+  --secondary-button-bg1: #DDDDDD;
+  --secondary-button-bg2: #919893;
+  --secondary-button-border: #CACACA;
 }
 
 body {
@@ -51,4 +60,18 @@ body {
   color: var(--foreground);
   font-family: "Inter", sans-serif;
   transition: background-color 160ms ease, color 160ms ease;
+}
+
+
+/* scrollbar */
+.hide-scrollbar {
+  /* For Internet Explorer and Edge (legacy) */
+  -ms-overflow-style: none;
+  /* For Firefox */
+  scrollbar-width: none;
+}
+
+/* For Chrome, Safari, Opera, and new Edge (Chromium-based) */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

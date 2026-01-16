@@ -8,8 +8,8 @@ import bg from "@/src/assets/images/home/bg01.png";
 export const metadata: Metadata = {
   // Basic Info
   title: {
-    default: "Athelate Program",
-    template: "%s | Athelate Program",
+    default: "Athlete Program",
+    template: "%s | Athlete Program",
   },
   description:
     "NextJS Starter Pack — A minimal, production-ready Next.js 16 starter with TypeScript and sensible defaults. Use this as the base for your next app.",

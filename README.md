@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project builded with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Athelate Program Frontend
+
+Modern Next.js dashboard experience for athlete program management. The home page focuses on training progress, upcoming tasks, feedback loops, community activity, and leaderboards.
+
+## Home Dashboard Highlights
+
+- **Hero banner**: Program headline with metrics and checkout calendar (`Banner`).
+- **Feedback videos**: Draggable, horizontally scrollable cards to resume reviews (`FeedBackVideos`).
+- **Task calendar**: Weekly view with status pills, CTA buttons, and mobile-friendly scrolling (`TaskCalender`).
+- **Recent activity**: Live feed of coach actions with quick filters (`RecentActivities`).
+- **Coach feedback**: Star-rated notes from coaches with quick access (`CoachFeedBack`).
+- **Announcements**: Live/RSVP sessions with engagement actions in-line (`Announcements`).
+- **Leaderboard**: Top performers with diamond avatars and ordered podium (`LeaderBoardV2`).
+- **Persistent chrome**: Responsive navbar with mobile search overlay plus sticky sidebar navigation.
+
+## Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Redux Toolkit + RTK Query (API ready)
+- Lucide + React Icons for UI icons
 
 ## Getting Started
 
-First, run the development server:
+Prerequisites: Node.js 18.18+ (Next 16 requirement) and npm or bun.
+
+Install dependencies:
+
+```bash
+npm install
+# or
+bun install
+```
+
+Run dev server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy the sample env and adjust as needed:
 
-## Learn More
+```bash
+cp example.env .env.local
+```
 
-To learn more about Next.js, take a look at the following resources:
+Update values (API URLs, auth keys, etc.) before running in non-local environments.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Key Paths
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app/(common)/page.tsx` – home layout wiring all dashboard sections.
+- `src/components/ui/others/dashboard/banner/Banner.tsx` – hero banner and calendar.
+- `src/components/pages/home/*` – home sections (videos, announcements, activity, feedback, leaderboard).
+- `src/components/ui/others/calender/TaskCalender.tsx` – weekly task view.
+- `src/components/shared/NavBar/NavBarV2.tsx` and `.../sidebar/Sidebar.tsx` – global navigation.
 
-## Deploy on Vercel
+## Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` – start dev server.
+- `npm run build` – production build.
+- `npm run start` – run built app.
+- `npm run lint` – lint with ESLint.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes for Contributors
+
+- Prefer TypeScript and keep components client/server-marked as appropriate.
+- Tailwind 4 class utilities are in use (utility-first, no `@apply`).
+- UI uses responsive flex/grid layouts; test on mobile and desktop when tweaking.
+
+## Deployment
+
+Standard Next.js deployment applies. Build with `npm run build` and serve via `npm run start`, or deploy to Vercel/compatible platforms using your CI of choice.

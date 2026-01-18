@@ -40,7 +40,7 @@ const VideoCard = ({
       {/* Card Content */}
       <div className="pt-4">
         {/* Title */}
-        <h3 className="text-[16px] leading-[22px] font-semibold text-slate-900 mb-3 line-clamp-2">
+        <h3 className="text-[16px] leading-5.5 font-semibold text-slate-900 mb-3 line-clamp-2">
           {title}
         </h3>
 

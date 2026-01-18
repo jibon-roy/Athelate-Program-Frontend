@@ -5,10 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Bell, MessageCircle, Search } from "lucide-react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import type { NavbarProps, NavItem, DropdownItem } from "./types";
 import { Drawer } from "./drawer";
-import { RootState } from "@/src/redux/store";
+// import { RootState } from "@/src/redux/store";
 // import UserDropdown from "./UserDropdown";
 
 export const Navbar = ({
@@ -99,9 +99,9 @@ export const Navbar = ({
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
-  const user = useSelector((state: RootState) => state.auth.user);
+  // const user = useSelector((state: RootState) => state.auth.user);
 
-  console.log(user)
+  // console.log(user)
 
   const handleSearchInput = (value: string) => {
     setSearchValue(value);

@@ -6,30 +6,29 @@ import player from "@/src/assets/images/home/player.png";
 const Banner = () => {
   return (
     <div
-      className="relative w-full rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="relative w-full min-h-106.25 rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${player.src})`,
-        minHeight: "360px",
       }}
     >
       {/* Overlay for better text visibility */}
-      <div className="absolute inset-0 bg-linear-to-t from-[#F7FAFF] via-transparent to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-white via-transparent via-60% to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between p-6 md:p-8 h-full">
+      <div className="absolute inset-0 z-10 flex flex-col justify-between p-6 md:p-8">
         {/* Left side - Title and States */}
-        <div className="flex-1 mb-6 md:mb-8">
-          <h1 className="text-[40px] md:text-[56px] leading-[120%] font-extrabold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
+        <div className="flex-1 mb-6 md:mb-7">
+          <h1 className="font-['Poppins'] text-[48px] leading-[140%] font-semibold tracking-[0px] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]">
             The QB Fundamentals
           </h1>
         </div>
-        <div className="md:flex md:items-end md:justify-between gap-6">
+        <div className="md:flex md:items-end md:justify-between gap-2">
           <div className="flex-1">
             <BannerStates />
           </div>
 
           {/* Right side - Checkout Calendar */}
-          <div className="max-xl:mt-6 md:ml-6 xl:ml-8">
+          <div>
             <CheckoutCalender />
           </div>
         </div>

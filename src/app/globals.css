@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 /* import tailwind v4 core (one line) */
 @import "tailwindcss";
@@ -21,9 +22,9 @@
   --primary-button-bg1: #5c8ff7;
   --primary-button-bg2: #276aee;
   --primary-button-border: #1556d834;
-  --secondary-button-bg1: #DDDDDD;
+  --secondary-button-bg1: #dddddd;
   --secondary-button-bg2: #919893;
-  --secondary-button-border: #CACACA;
+  --secondary-button-border: #cacaca;
 }
 
 @theme {
@@ -50,18 +51,19 @@ html.dark,
   --primary-button-bg1: #5c8ff7;
   --primary-button-bg2: #276aee;
   --primary-button-border: #1556d834;
-  --secondary-button-bg1: #DDDDDD;
+  --secondary-button-bg1: #dddddd;
   --secondary-button-bg2: #919893;
-  --secondary-button-border: #CACACA;
+  --secondary-button-border: #cacaca;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Inter", sans-serif;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 }
-
 
 /* scrollbar */
 .hide-scrollbar {

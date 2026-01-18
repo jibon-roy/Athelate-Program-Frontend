@@ -19,12 +19,12 @@ const NavBarV2 = () => {
           <Logo />
         </div>
         <div className="flex-1 md:ml-5">
-          <p className="font-medium text-sm md:text-base">
+          <p className="font-semibold text-sm md:text-base">
             <span className="hidden sm:inline">Welcome Back, Mark</span>
             <span className="sm:hidden">Mark</span>
             <br className="hidden md:block" />
             <span className="text-black/40 text-xs md:text-sm hidden lg:inline">
-              Overview /
+              Overview/
             </span>{" "}
             <span className="text-xs md:text-sm hidden lg:inline">
               Athlete Program Dashboard
@@ -37,7 +37,7 @@ const NavBarV2 = () => {
           value={searchValue}
           onChange={setSearchValue}
           placeholder="Search"
-          className="hidden lg:flex w-full max-w-sm"
+          className="hidden lg:flex  w-full max-w-sm"
         />
 
         {/* Mobile Search Icon */}

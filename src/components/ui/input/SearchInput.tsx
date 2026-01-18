@@ -44,7 +44,7 @@ const SearchInput = ({
         onChange={(event) => onChange?.(event.target.value)}
         placeholder={placeholder}
         className={cn(
-          "h-12 md:h-16 w-full bg-white/30 border-l border-l-white px-4 pl-11 text-sm text-slate-700 placeholder:text-slate-500  outline-none ring-0 transition focus:ring-2 focus:ring-blue-300/60 disabled:cursor-not-allowed disabled:opacity-60",
+          "h-12 md:h-20 w-full bg-white/30 border-l border-l-white px-4 pl-11 text-sm text-slate-700 placeholder:text-slate-500 font-medium outline-none ring-0 transition focus:ring-2 focus:ring-blue-300/60 disabled:cursor-not-allowed disabled:opacity-60",
           inputClassName
         )}
         aria-label={placeholder}

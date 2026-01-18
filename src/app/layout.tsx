@@ -172,7 +172,7 @@ export default function RootLayout({
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                className="px-6 md:px-8 max-w-7xl mx-auto"
+                className="px-6 md:px-8 max-w-360 mx-auto"
               >
                 {children}
               </div>

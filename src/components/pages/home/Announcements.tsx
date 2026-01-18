@@ -68,7 +68,7 @@ const Announcements = () => {
         <Button
           aria-label="View more announcements"
           variant="primary"
-          className="text-sm whitespace-nowrap"
+          className="whitespace-nowrap"
         >
           View More
         </Button>

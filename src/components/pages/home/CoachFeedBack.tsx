@@ -79,7 +79,7 @@ const CoachFeedBack = () => {
         <Button
           variant="primary"
           size="default"
-          className="text-xs md:text-sm whitespace-nowrap"
+          className="whitespace-nowrap"
         >
           View More
         </Button>

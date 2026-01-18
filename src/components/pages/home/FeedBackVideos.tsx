@@ -73,11 +73,11 @@ const FeedBackVideos = () => {
   return (
     <div className="w-full">
       <div className="mb-6 flex flex-wrap gap-3 items-center justify-between">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black">
+        <h2 className="text-lg sm:text-xl md:text-xl font-bold text-black">
           Continue Where You Left off
         </h2>
-        <Button variant="primary" className="text-sm whitespace-nowrap">
-          View All{" "}
+        <Button variant="primary" className="whitespace-nowrap">
+          View More{" "}
         </Button>
       </div>
 

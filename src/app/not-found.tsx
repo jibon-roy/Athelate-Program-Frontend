@@ -27,13 +27,13 @@ const NotFoundPage = () => {
             variant="outline"
             size="md"
             onClick={() => router.back()}
-            className="w-full max-w-[220px]"
+            className="w-full max-w-55"
           >
             Go Back
           </Button>
 
           <div className="text-sm text-secondary-text">or,</div>
-          <Link href="/" className="w-full max-w-[220px]">
+          <Link href="/" className="w-full max-w-55">
             <Button className="w-full" variant="primary" size="md">
               Go to Home
             </Button>

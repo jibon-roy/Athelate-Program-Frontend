@@ -8,6 +8,7 @@ import rank3 from "@/src/assets/images/home/3.png";
 import f0 from "@/src/assets/images/card/f0.png";
 import f1 from "@/src/assets/images/card/f1.png";
 import f2 from "@/src/assets/images/card/f2.png";
+import { Button } from "../../ui/button/Button";
 
 type TopEntry = {
   rank: 1 | 2 | 3;
@@ -108,9 +109,7 @@ const LeaderBoardV2 = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
-        <button className="text-xs md:text-sm px-4 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition">
-          View More
-        </button>
+        <Button>View More</Button>
       </div>
 
       {/* Top 3 section with background */}

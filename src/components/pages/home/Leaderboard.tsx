@@ -9,6 +9,7 @@ import player from "@/src/assets/images/home/player.png";
 import f0 from "@/src/assets/images/card/f0.png";
 import f1 from "@/src/assets/images/card/f1.png";
 import f2 from "@/src/assets/images/card/f2.png";
+import { Button } from "../../ui/button/Button";
 
 type TopEntry = {
   rank: 1 | 2 | 3;
@@ -167,9 +168,9 @@ const Leaderboard = () => {
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
-        <button className="text-xs md:text-sm px-3 py-1 rounded-full border border-blue-300 text-blue-600 hover:bg-blue-50">
+        <Button>
           View More
-        </button>
+        </Button>
       </div>
 
       {/* Top 3 section */}

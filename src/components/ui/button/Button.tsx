@@ -4,7 +4,7 @@ import { cn } from "@/src/lib/utils";
 
 // Button variant styles using cva (class-variance-authority)
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center font-normal transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
@@ -23,10 +23,10 @@ const buttonVariants = cva(
           "border border-secondary text-secondary hover:bg-secondary hover:text-white rounded-lg",
       },
       size: {
-        default: "px-8 py-2.5 text-base",
-        sm: "px-4 py-1.5 text-sm",
-        md: "px-6 py-2 text-base",
-        lg: "px-12 py-3 text-lg",
+        default: "px-6 py-3 text-[11px]",
+        sm: "px-4 py-3 text-[11px]",
+        md: "px-6 py-2 text-[11px]",
+        lg: "px-12 py-3 text-[11px]",
       },
     },
     defaultVariants: {

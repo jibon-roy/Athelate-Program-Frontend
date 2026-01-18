@@ -15,17 +15,19 @@ const weekItems = [
 
 const CheckoutCalender = () => {
   return (
-    <div className="w-full max-w-sm rounded-2xl  bg-linear-to-t from-white via-white to-white/80 p-5 shadow-[0_18px_45px_rgba(17,24,39,0.08)]">
-      <div className="flex items-start justify-between gap-4">
+    <div className="w-full max-w-82.5 rounded-3xl  bg-linear-to-t from-white via-white to-white/80 p-4 shadow-[0_18px_45px_rgba(17,24,39,0.08)]">
+      <div className="flex items-start justify-between gap-8">
         <div>
-          <p className="text-sm font-semibold tracking-wide text-black mt-3">
+          <p className="text-xs font-semibold tracking-wide text-black mt-3">
             Active Streak
           </p>
-          <div className="bg-white mt-5 shadow-md">
+          <div className="bg-white mt-2 shadow-md">
             <div className="mt-1 flex items-end gap-2">
-              <span className="text-2xl font-semibold text-slate-900">12 Days</span>
+              <span className="text-2xl font-semibold text-slate-900">
+                12 Days
+              </span>
             </div>
-            <p className="mt-1 text-[11px] font-medium text-slate-400">
+            <p className="mt-1 text-[11px] font-medium text-[#141B34CC]">
               Next milestone: 15 days
             </p>
           </div>
@@ -40,7 +42,7 @@ const CheckoutCalender = () => {
         </div>
       </div>
 
-      <div className="mt-5 flex items-center justify-between">
+      <div className="mt-2 flex items-center gap-4 justify-between">
         {weekItems?.map((item, id) => (
           <div
             key={`${item.label}-${id}`}
@@ -50,11 +52,11 @@ const CheckoutCalender = () => {
               {item.label}
             </span>
             {item.active ? (
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-b from-[#5C8FF7]  to-[#276AEE] text-sm font-semibold text-white shadow-[0_8px_16px_rgba(37,99,235,0.35)]">
-                <GiCheckMark className="h-4 w-4" />
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-linear-to-b from-[#5C8FF7]  to-[#276AEE] text-xs font-semibold text-white">
+                <GiCheckMark className="h-3 w-3" />
               </span>
             ) : (
-              <span className="text-sm bg-white h-8 w-8 flex items-center justify-center rounded-full font-semibold text-slate-500">
+              <span className="text-xs bg-white h-6 w-6 flex items-center justify-center rounded-full font-semibold text-slate-500">
                 {item.value}
               </span>
             )}

@@ -27,7 +27,7 @@ function ProgressRing({
 }) {
   const clamped = Math.max(0, Math.min(100, progress));
   const size = 50;
-  const stroke = 6;
+  const stroke = 5;
   const cx = size / 2;
   const cy = size / 2;
   const radius = (size - stroke) / 2;
@@ -183,14 +183,14 @@ const bannerCards: BannerCard[] = [
     subtitle: "last 30 days",
     value: "65%",
     progress: 65,
-    progressColor: "#3b82f6",
+    progressColor: "#276AEE",
   },
   {
     id: "weekly",
     title: "Weekly Progress",
     value: "35%",
     progress: 35,
-    progressColor: "#22c55e",
+    progressColor: "#12D85B",
   },
 ];
 
@@ -211,7 +211,7 @@ const BannerStates = () => {
                 </div>
               ) : null}
               <div>
-                <p className="text-[12px] font-medium leading-4.25 tracking-[-0.02em] text-[#141B34B2]">
+                <p className="text-[12px] font-medium leading-4.25 tracking-[-0.02em] text-[#141B34]">
                   {card.title}
                 </p>
                 {card.subtitle ? (

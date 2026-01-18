@@ -58,7 +58,6 @@ const others: ListEntry[] = [
   { rank: 8, name: "Esther Howard", points: 172, avatar: f0 },
 ];
 
-
 function PointsBadge({
   points,
   tone,
@@ -70,8 +69,8 @@ function PointsBadge({
     tone === "blue"
       ? "bg-blue-600"
       : tone === "gray"
-      ? "bg-gray-500"
-      : "bg-orange-500";
+        ? "bg-gray-500"
+        : "bg-orange-500";
   return (
     <div
       className={`absolute -bottom-3 left-1/2 -translate-x-1/2 ${bg} text-white text-xs md:text-sm px-3 py-1 rounded-full shadow-md`}
@@ -124,8 +123,8 @@ function TopCard({ item }: { item: TopEntry }) {
             item.rank === 1
               ? "text-blue-700"
               : item.rank === 2
-              ? "text-gray-700"
-              : "text-orange-700"
+                ? "text-gray-700"
+                : "text-orange-700"
           }`}
         >
           {item.name}
@@ -167,10 +166,8 @@ const Leaderboard = () => {
     <section className="w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
-        <Button>
-          View More
-        </Button>
+        <h2 className="text-lg md:text-[18px] font-bold">Leaderboard</h2>
+        <Button>View More</Button>
       </div>
 
       {/* Top 3 section */}

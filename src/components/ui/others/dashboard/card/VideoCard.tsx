@@ -20,7 +20,7 @@ const VideoCard = ({
   isCompleted = false,
 }: VideoCardProps) => {
   return (
-    <div className="w-full max-w-sm p-4 rounded-[20px] overflow-hidden bg-white/60 hover:bg-white backdrop-blur-[6px] mb-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] transition-all duration-200 ease-out">
+    <div className="w-full max-w-66 p-3 rounded-[20px] overflow-hidden bg-white/60 hover:bg-white backdrop-blur-[6px] mb-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] transition-all duration-200 ease-out">
       {/* Video Thumbnail */}
       <div className="relative aspect-video w-full h-32 rounded-xl bg-gray-200 overflow-hidden">
         <Image
@@ -32,7 +32,7 @@ const VideoCard = ({
         {/* Play button overlay */}
         <div className="absolute cursor-pointer inset-0 flex items-center justify-center bg-black/0 hover:bg-black/40 transition-colors">
           <div className="bg-white/10 shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)] backdrop-blur-xs p-1 rounded-full">
-            <FaCirclePlay className="text-white text-3xl" />
+            <FaCirclePlay className="text-white text-2xl" />
           </div>
         </div>
       </div>

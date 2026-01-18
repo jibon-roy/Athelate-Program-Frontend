@@ -2,6 +2,10 @@
 
 import React, { useState } from "react";
 import { Button } from "@/src/components/ui/button/Button";
+import user1 from "@/src/assets/images/card/user1.png";
+import user2 from "@/src/assets/images/card/user2.png";
+import user3 from "@/src/assets/images/card/user3.png";
+import Image from "next/image";
 
 interface Feedback {
   id: number;
@@ -17,7 +21,7 @@ const CoachFeedBack = () => {
     {
       id: 1,
       coachName: "Coach Sarah",
-      coachImage: "/placeholder-coach-1.jpg",
+      coachImage: user1.src,
       time: "2h ago",
       message:
         "Great progress on your strength training! 💪 Stay consistent and keep challenging yourself. You're getting stronger every day — keep pushing! 🚀",
@@ -26,7 +30,7 @@ const CoachFeedBack = () => {
     {
       id: 2,
       coachName: "Coach Sarah",
-      coachImage: "/placeholder-coach-2.jpg",
+      coachImage: user2.src,
       time: "3h ago",
       message:
         "Your squat form is looking much better! 🏆 Stay focused on technique each rep. Keep it up—you're building real strength! 🔥",
@@ -35,7 +39,7 @@ const CoachFeedBack = () => {
     {
       id: 3,
       coachName: "Coach Sarah",
-      coachImage: "/placeholder-coach-3.jpg",
+      coachImage: user3.src,
       time: "",
       message:
         "Solid improvement on your squat technique! Each rep looks more confident. Keep driving forward—you're doing great! 🚀",
@@ -45,11 +49,11 @@ const CoachFeedBack = () => {
 
   const renderStars = (rating: number) => {
     return (
-      <div className="flex gap-1">
+      <div className="flex gap-0.5">
         {[1, 2, 3, 4, 5].map((star) => (
           <svg
             key={star}
-            className={`w-5 h-5 ${
+            className={`w-4.5 h-4.5 ${
               star <= rating
                 ? "text-orange-400 fill-orange-400"
                 : "text-orange-400 fill-none"
@@ -70,50 +74,55 @@ const CoachFeedBack = () => {
   };
 
   return (
-    <div className="bg-white/60 backdrop-blur-[6px] w-full rounded-[20px] p-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
+    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-4 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <h3 className="text-lg md:text-xl font-bold text-gray-900">
+        <h3 className="text-lg md:text-[20px] font-bold text-gray-900">
           Coach Feedback
         </h3>
-        <Button
-          variant="primary"
-          size="default"
-          className="whitespace-nowrap"
-        >
+        <Button variant="primary" size="default" className="whitespace-nowrap">
           View More
         </Button>
       </div>
 
       {/* Feedback List */}
-      <div className="space-y-6">
+      <div className="space-y-3">
         {feedbacks.map((feedback) => (
-          <div key={feedback.id} className="flex gap-4">
-            {/* Coach Avatar */}
-            <div className="relative w-12 h-12 rounded-full bg-linear-to-br from-gray-200 to-gray-400 shrink-0 overflow-hidden">
-              {/* Placeholder for coach image */}
-              <div className="w-full h-full flex items-center justify-center text-gray-600 font-semibold">
-                CS
+          <div
+            key={feedback.id}
+            className="p-3 rounded-2xl bg-white/40 hover:bg-white/60"
+          >
+            <div className="flex mb-2 gap-4">
+              {/* Coach Avatar */}
+              <div className="relative w-10 h-10 rounded-full bg-linear-to-br from-gray-200 to-gray-400 shrink-0 overflow-hidden">
+                <Image
+                  src={feedback.coachImage}
+                  alt={feedback.coachName}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+
+              {/* Feedback Content */}
+              <div className="flex-1">
+                {/* Coach Name and Stars */}
+                <div className="flex items-center flex-start justify-between max-sm:flex-wrap gap-3 mb-2">
+                  <div>
+                    <h4 className="text-black text-sm font-semibold">
+                      {feedback.coachName}
+                    </h4>
+                    <p className="text-[#141B34B2] text-xs">{feedback.time}</p>
+                  </div>
+                  <div className="sm:ml-4 text-xs">
+                    {renderStars(feedback.rating)}
+                  </div>
+                </div>
+
+                {/* Feedback Message */}
               </div>
             </div>
-
-            {/* Feedback Content */}
-            <div className="flex-1">
-              {/* Coach Name and Stars */}
-              <div className="flex items-start justify-between max-sm:flex-wrap gap-3 mb-2">
-                <div>
-                  <h4 className="text-gray-900 font-semibold">
-                    {feedback.coachName}
-                  </h4>
-                  <p className="text-gray-500 text-sm">{feedback.time}</p>
-                </div>
-                <div className="sm:ml-4">{renderStars(feedback.rating)}</div>
-              </div>
-
-              {/* Feedback Message */}
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {feedback.message}
-              </p>
+            <div className="text-[#141B34B2] text-xs max-w-87.5 leading-relaxed">
+              {feedback.message}
             </div>
           </div>
         ))}

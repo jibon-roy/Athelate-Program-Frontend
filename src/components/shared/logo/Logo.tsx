@@ -12,7 +12,7 @@ const Logo = () => {
           alt="Logo"
           width={logo.width}
           height={logo.height}
-          className="w-10 h-auto"
+          className="w-8 h-auto"
         />
       </Link>
     </div>

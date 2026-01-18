@@ -18,15 +18,15 @@ const NavBarV2 = () => {
         <div className="flex items-center gap-2 md:gap-3">
           <Logo />
         </div>
-        <div className="flex-1 md:ml-5">
-          <p className="font-semibold text-sm md:text-base">
+        <div className="flex-1 md:ml-8">
+          <p className="font-semibold text-black/90 text-sm md:text-[15px]">
             <span className="hidden sm:inline">Welcome Back, Mark</span>
             <span className="sm:hidden">Mark</span>
             <br className="hidden md:block" />
-            <span className="text-black/40 text-xs md:text-sm hidden lg:inline">
+            <span className="text-black/40 text-xs md:text-[14px] hidden lg:inline">
               Overview/
             </span>{" "}
-            <span className="text-xs md:text-sm hidden lg:inline">
+            <span className="text-xs md:text-[15px] hidden lg:inline">
               Athlete Program Dashboard
             </span>
           </p>

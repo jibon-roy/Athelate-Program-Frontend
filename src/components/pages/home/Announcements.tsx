@@ -59,10 +59,10 @@ const Announcements = () => {
   ]);
 
   return (
-    <div className="w-full rounded-[20px] max-w-5xl bg-white/50 backdrop-blur-[6px] shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
+    <div className="w-full  bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
-      <div className="flex p-5 bg-white/60 rounded-t-[20px] items-center justify-between">
-        <h2 className="text-lg md:text-xl font-bold text-gray-900">
+      <div className="flex p-5 bg-white/40 rounded-t-[20px] items-center justify-between">
+        <h2 className="text-lg md:text-[18px] font-semibold text-[#141B34]">
           Announcements preview
         </h2>
         <Button

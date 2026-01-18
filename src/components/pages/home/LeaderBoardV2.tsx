@@ -108,7 +108,7 @@ const LeaderBoardV2 = () => {
     <section className="w-full p-5 rounded-[20px] max-w-5xl bg-white/50 backdrop-blur-[6px] shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
+        <h2 className="text-lg md:text-[18px] font-bold">Leaderboard</h2>
         <Button>View More</Button>
       </div>
 

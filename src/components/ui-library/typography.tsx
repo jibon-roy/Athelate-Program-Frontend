@@ -9,8 +9,8 @@ const headingVariants = cva("font-bold leading-tight tracking-tight", {
       h1: "text-4xl md:text-5xl lg:text-6xl",
       h2: "text-3xl md:text-4xl lg:text-5xl",
       h3: "text-2xl md:text-3xl lg:text-4xl",
-      h4: "text-xl md:text-2xl lg:text-3xl",
-      h5: "text-lg md:text-xl",
+      h4: "text-[18px] md:text-2xl lg:text-3xl",
+      h5: "text-lg md:text-[18px]",
       h6: "text-base md:text-lg",
     },
     weight: {
@@ -43,7 +43,8 @@ const headingVariants = cva("font-bold leading-tight tracking-tight", {
 });
 
 export interface HeadingProps
-  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color">,
+  extends
+    Omit<React.HTMLAttributes<HTMLHeadingElement>, "color">,
     VariantProps<typeof headingVariants> {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   animate?: boolean;
@@ -63,7 +64,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
       motionProps,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Component = as || (size as React.ElementType) || "h1";
     const Comp = animate ? motion[Component as keyof typeof motion] : Component;
@@ -76,7 +77,7 @@ export const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
     };
 
     return <Comp {...headingProps} />;
-  }
+  },
 );
 
 Heading.displayName = "Heading";
@@ -88,7 +89,7 @@ const textVariants = cva("", {
       sm: "text-sm",
       base: "text-base",
       lg: "text-lg",
-      xl: "text-xl",
+      xl: "text-[18px]",
       "2xl": "text-2xl",
     },
     weight: {
@@ -130,7 +131,8 @@ const textVariants = cva("", {
 });
 
 export interface TextProps
-  extends Omit<React.HTMLAttributes<HTMLParagraphElement>, "color">,
+  extends
+    Omit<React.HTMLAttributes<HTMLParagraphElement>, "color">,
     VariantProps<typeof textVariants> {
   as?: React.ElementType;
   animate?: boolean;
@@ -151,7 +153,7 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
       motionProps,
       ...props
     },
-    ref
+    ref,
   ) => {
     const Comp = animate
       ? motion[Component as keyof typeof motion] || motion.p
@@ -160,7 +162,7 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
     const textProps = {
       className: cn(
         textVariants({ size, weight, align, color, lineHeight }),
-        className
+        className,
       ),
       ref,
       ...props,
@@ -168,7 +170,7 @@ export const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
     };
 
     return <Comp {...textProps} />;
-  }
+  },
 );
 
 Text.displayName = "Text";

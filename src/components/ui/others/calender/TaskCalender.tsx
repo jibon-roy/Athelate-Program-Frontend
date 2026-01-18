@@ -4,7 +4,9 @@ import React, { useState, useMemo } from "react";
 import { Button } from "../../button/Button";
 import { IoIosArrowRoundUp } from "react-icons/io";
 import { BiSolidBell } from "react-icons/bi";
-import { TbPlayerPlayFilled } from "react-icons/tb";
+// import { TbPlayerPlayFilled } from "react-icons/tb";
+import playIcon from "@/src/assets/icon/play.png";
+import Image from "next/image";
 
 interface TaskItem {
   id: number;
@@ -44,7 +46,7 @@ const TaskCalender = () => {
         variant: "primary",
         icon: (
           <div className="bg-white/30 rounded-full flex items-center justify-center text-white text-md p-px">
-            <IoIosArrowRoundUp />
+            <IoIosArrowRoundUp className="text-white text-xs" />
           </div>
         ),
       },
@@ -86,8 +88,8 @@ const TaskCalender = () => {
         text: "Start",
         variant: "primary",
         icon: (
-          <div className="bg-white/40 rounded-full flex items-center justify-center text-white p-1">
-            <TbPlayerPlayFilled className="text-white text-xs" />
+          <div>
+            <Image src={playIcon} alt="play" className="text-white w-3 h-3" />
           </div>
         ),
       },
@@ -122,15 +124,13 @@ const TaskCalender = () => {
   }, [currentDate]);
 
   return (
-    <div className="w-full rounded-[20px] max-w-5xl bg-white/30 backdrop-blur-[6px] p-4 md:p-5 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
+    <div className="w-full rounded-[20px] max-w-5xl bg-white/30 backdrop-blur-[6px] p-4 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 md:mb-6">
-        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-slate-900">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+        <h2 className="text-lg md:text-[20px] font-semibold text-slate-900">
           Todays tasks
         </h2>
-        <Button variant="primary" className="text-[11px]">
-          View Entire Schedule
-        </Button>
+        <Button variant="primary">View Entire Schedule</Button>
       </div>
 
       {/* Week Days */}
@@ -159,15 +159,15 @@ const TaskCalender = () => {
             className="flex flex-col items-center shrink-0 relative min-w-15 sm:min-w-17.5 md:flex-1"
           >
             <div
-              className={`w-full flex flex-col items-center px-1.5 sm:px-2 md:px-3 py-2 sm:py-2.5 md:py-3 rounded-lg sm:rounded-xl md:rounded-2xl transition-all cursor-pointer ${
-                day.isToday
-                  ? "bg-white shadow-lg shadow-primary-button-bg1/30"
+              className={`w-full flex flex-col pt-3 items-center px-1.5 mb-2 sm:px-2 md:px-3 py-2   rounded-lg sm:rounded-xl md:rounded-2xl transition-all cursor-pointer ${
+                day.day === "Tue"
+                  ? "bg-white shadow-lg shadow-primary-button-bg1/20"
                   : "bg-white/50 hover:bg-slate-50/50"
               }`}
             >
               {/* Day Label */}
               <span
-                className={`text-xs sm:text-sm md:text-base font-semibold mb-1 sm:mb-1.5 md:mb-2 ${
+                className={`text-xs sm:text-sm md:text-[18px] text-[#141B34] font-medium mb-1 sm:mb-1.5 md:mb-2 ${
                   day.isToday ? "text-[#141B34]" : "text-[#141B34]"
                 }`}
               >
@@ -176,7 +176,7 @@ const TaskCalender = () => {
 
               {/* Date */}
               <span
-                className={`text-xs sm:text-sm md:text-base mb-2 sm:mb-2.5 md:mb-3 ${
+                className={`text-xs sm:text-sm md:text-[12px] mb-2 sm:mb-2.5 md:mb-3 ${
                   day.isToday ? "text-[#141B34]" : "text-[#141B34]"
                 }`}
               >
@@ -187,7 +187,7 @@ const TaskCalender = () => {
             {/* Task Indicator Dot - positioned below */}
             {day.hasTask && (
               <div
-                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 absolute right-1.5 sm:right-2 md:right-3 top-1 rounded-full mt-2 ${
+                className={`w-2 h-2 sm:w-1.5 sm:h-1.5 absolute right-1.5 sm:right-2 md:right-3.5 top-0.5 rounded-full mt-2 ${
                   day.taskColor === "blue"
                     ? "bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 shadow-md"
                     : "bg-linear-to-b from-[#FDB631] to-[#EC4213]"
@@ -199,13 +199,13 @@ const TaskCalender = () => {
       </div>
 
       {/* Task List */}
-      <div className="mt-4 sm:mt-6 md:mt-8 space-y-2 sm:space-y-3">
+      <div className="space-y-2 sm:space-y-3">
         {tasks.map((task, idx) => (
           <div
             key={task.id}
-            className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl gap-3 sm:gap-0 ${
-              idx === 0 ? "bg-white" : ""
-            } hover:bg-white transition-colors`}
+            className={`flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 rounded-xl sm:rounded-2xl gap-3 sm:gap-0 ${
+              idx === 0 ? "bg-white/40" : ""
+            } hover:bg-white/40 transition-colors`}
           >
             {/* Left Section: Indicator + Task Info */}
             <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0 w-full sm:w-auto">
@@ -214,29 +214,30 @@ const TaskCalender = () => {
               {/* Task Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
-                  <h3 className="text-sm sm:text-base font-semibold text-slate-900">
+                  <h3 className="text-sm sm:text-[14px] font-semibold text-slate-900">
                     {task.title}
                   </h3>
                   {task.status === "live" && (
-                    <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-semibold text-red-600 bg-red-100 rounded">
+                    <span className="flex items-center gap-1 text-red-500 px-2 py-1 rounded-full text-[11px] font-bold">
+                      <span className="w-2 h-2 bg-red-500 rounded-xs animate-pulse"></span>
                       Live
                     </span>
                   )}
                   {task.id === 1 && (
-                    <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-medium text-gray-600 bg-gray-100 rounded whitespace-nowrap">
+                    <span className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-[10px] font-medium text-black bg-[#0000001A] rounded-full whitespace-nowrap">
                       Video Submission Required
                     </span>
                   )}
                 </div>
-                <div className="text-xs sm:text-sm flex gap-1 text-gray-600">
+                <div className="text-[12px] flex gap-1 text-[#141B34CC]">
                   {" "}
                   {task.status === "live" ? (
                     <div className="flex items-center justify-center w-3">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-linear-to-b from-[#F7E75C] to-[#CC7B1F] border border-[#F7E75C] shrink-0"></div>
+                      <div className="w-3 h-3 rounded bg-linear-to-b from-[#F7E75C] to-[#CC7B1F] border border-[#F7E75C] shrink-0"></div>
                     </div>
                   ) : (
                     <div className="flex items-center justify-center w-3">
-                      <div className="w-2.5 h-2.5 rounded-sm bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 border border-primary-button-bg1 shrink-0"></div>
+                      <div className="w-3 h-3 rounded bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 border border-primary-button-bg1 shrink-0"></div>
                     </div>
                   )}
                   {task.subtitle}
@@ -247,7 +248,7 @@ const TaskCalender = () => {
             {/* Right Section: Status + Button */}
             <div className="flex items-center gap-2 sm:gap-3 md:gap-5 sm:ml-4 w-full sm:w-auto">
               {/* Status Text with Icon */}
-              <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-600 min-w-20 sm:min-w-30 justify-start">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-[12px] text-gray-600 min-w-20 sm:min-w-30 justify-start">
                 {task.status === "due" && (
                   <>
                     <svg
@@ -323,7 +324,7 @@ const TaskCalender = () => {
                 <Button
                   variant={task.actionButton.variant}
                   size="sm"
-                  className="text-xs sm:text-sm w-full sm:w-auto"
+                  className={`${task.actionButton.icon ? "pl-2.5 pr-3" : "px-4"} w-auto  py-2`}
                 >
                   {task.actionButton.icon && (
                     <div className="mr-1.5 sm:mr-2">

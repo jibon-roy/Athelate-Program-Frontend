@@ -77,7 +77,7 @@ const RecentActivities = () => {
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <div className="flex items-center">
-          <h3 className="text-lg md:text-xl font-bold text-gray-900">
+          <h3 className="text-lg md:text-[20px] font-bold text-gray-900">
             Recent Activity
           </h3>
           <span className="flex items-center gap-1 text-red-500 px-2 py-1 rounded-full text-[11px] font-bold">

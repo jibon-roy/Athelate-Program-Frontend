@@ -12,8 +12,8 @@ export default function Home() {
       <div className="min-h-screen">
         <Banner />
         <div className="grid grid-cols-1 xl:grid-cols-11 gap-4 mt-6">
-          <div className="w-full xl:col-span-7 shadow-[0px_12px_28px_rgba(17,24,39,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
-            <div className="w-full  bg-white/30 p-6 rounded-[20px] overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+          <div className="w-full rounded-3xl xl:col-span-7 shadow-[0px_12px_28px_rgba(17,24,39,0.02),0px_1px_1px_rgba(0,0,0,0.02)]">
+            <div className="w-full  bg-white/30 p-4 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
               <FeedBackVideos />
               <TaskCalender />
             </div>
@@ -23,7 +23,7 @@ export default function Home() {
             <CoachFeedBack />
           </div>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+        <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-2">
           <Announcements />
           <LeaderBoardV2 />
         </div>

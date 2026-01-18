@@ -73,7 +73,7 @@ const FeedBackVideos = () => {
   return (
     <div className="w-full">
       <div className="mb-6 flex flex-wrap gap-3 items-center justify-between">
-        <h2 className="text-lg sm:text-xl md:text-xl font-bold text-black">
+        <h2 className="text-lg md:text-[20px] font-bold text-black">
           Continue Where You Left off
         </h2>
         <Button variant="primary" className="whitespace-nowrap">
@@ -92,11 +92,11 @@ const FeedBackVideos = () => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        <div className="flex gap-4 md:gap-6">
+        <div className="flex gap-4">
           {videos.map((video, index) => (
             <div
               key={index}
-              className="shrink-0 w-62.5 md:w-70"
+              className="shrink-0 w-62.5"
               onMouseDown={(e) => e.preventDefault()}
             >
               <VideoCard

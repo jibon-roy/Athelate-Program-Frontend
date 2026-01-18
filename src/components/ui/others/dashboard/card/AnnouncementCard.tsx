@@ -41,12 +41,12 @@ const AnnouncementCard = ({
   replies,
 }: AnnouncementCardProps) => {
   return (
-    <div className="bg-white/60 rounded-2xl p-4 md:p-5 mb-4 hover:bg-white/80 transition-colors shadow-sm">
+    <div className="bg-white rounded-2xl p-4 mb-4 hover:bg-white/80 transition-colors shadow-sm">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
-        <div className="flex items-start gap-3">
+        <div className="flex items-start gap-2">
           {/* Avatar */}
-          <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 bg-gray-200">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 bg-gray-200">
             <Image
               src={authorAvatar}
               alt={authorName}
@@ -57,41 +57,42 @@ const AnnouncementCard = ({
 
           {/* Author Info */}
           <div>
-            <div className="flex items-center gap-2">
-              <h4 className="font-bold text-gray-900">{authorName}</h4>
-              <span className="text-gray-500 text-sm">{authorUsername}</span>
+            <div className="flex items-center gap-1.5 mb-0.5">
+              <h4 className="font-bold text-[16px] text-[#0F1419]">
+                {authorName}
+              </h4>
+              <span className="text-[#536471] text-[16px]">
+                {authorUsername}
+              </span>
             </div>
-            <p className="text-gray-500 text-xs">{timeAgo}</p>
+            <p className="text-[#141B3499] text-[10px]">{timeAgo}</p>
           </div>
         </div>
 
         {/* Menu Button
         <button className="text-gray-500 hover:text-gray-700 p-1">
-          <BsThreeDotsVertical className="text-xl" />
+          <BsThreeDotsVertical className="text-[18px]" />
         </button> */}
       </div>
 
       {/* Content */}
       <div className="mb-4">
-        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-lg md:text-[20px] font-bold text-[#0F1419] mb-1">
           {title}
         </h3>
 
         {/* Coaches Links */}
         {coaches && coaches.length > 0 && (
-          <div className="mb-2">
+          <div className="mb-1 text-[14px]">
             {coaches.map((coach, index) => (
               <span key={index}>
-                <a
-                  href="#"
-                  className="text-[#276AEE]  hover:underline"
-                >
+                <a href="#" className="text-[#276AEE]  hover:underline">
                   {coach}
                 </a>
                 {index < coaches.length - 1 && " & "}
               </span>
             ))}
-            <span className="text-gray-700 ml-1">{description}</span>
+            <span className="text-[#0F1419] ml-1">{description}</span>
           </div>
         )}
 
@@ -140,7 +141,7 @@ const AnnouncementCard = ({
           </div>
         </div>
         {/* <button className="flex items-center gap-2 text-[#276AEE] hover:text-blue-700 transition-colors">
-          <IoMdRepeat className="text-xl" />
+          <IoMdRepeat className="text-[18px]" />
         </button> */}
       </div>
     </div>

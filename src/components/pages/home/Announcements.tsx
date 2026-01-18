@@ -59,13 +59,17 @@ const Announcements = () => {
   ]);
 
   return (
-    <div className="w-full rounded-2xl max-w-5xl bg-white/30 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
+    <div className="w-full rounded-[20px] max-w-5xl bg-white/50 backdrop-blur-[6px] shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
       {/* Header */}
-      <div className="flex p-5 bg-white/30 rounded-t-2xl items-center justify-between">
+      <div className="flex p-5 bg-white/60 rounded-t-[20px] items-center justify-between">
         <h2 className="text-lg md:text-xl font-bold text-gray-900">
           Announcements preview
         </h2>
-        <Button variant="primary" className="text-sm whitespace-nowrap">
+        <Button
+          aria-label="View more announcements"
+          variant="primary"
+          className="text-sm whitespace-nowrap"
+        >
           View More
         </Button>
       </div>

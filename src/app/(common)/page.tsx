@@ -11,17 +11,17 @@ export default function Home() {
     <>
       <div className="min-h-screen">
         <Banner />
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-6">
-          <div className="w-full col-span-2 bg-white/30 p-4 md:p-6 rounded-2xl md:rounded-3xl overflow-auto shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_360px] gap-6 mt-6">
+          <div className="w-full bg-white/40 p-6 rounded-[20px] overflow-auto shadow-[0px_12px_28px_rgba(17,24,39,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
             <FeedBackVideos />
             <TaskCalender />
           </div>
-          <div className="w-full">
+          <div className="w-full space-y-6">
             <RecentActivities />
             <CoachFeedBack />
           </div>
         </div>
-        <div className="mt-4 md:mt-6 grid grid-cols-1 gap-4 md:gap-6 xl:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
           <Announcements />
           <LeaderBoardV2 />
         </div>

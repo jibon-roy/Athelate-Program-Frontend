@@ -48,7 +48,7 @@ const RecentActivities = () => {
   ]);
 
   return (
-    <div className="bg-white/40 w-full shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)] rounded-2xl p-4 md:p-5 mb-6">
+    <div className="bg-white/60 backdrop-blur-[6px] w-full rounded-[20px] p-5 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] mb-6">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <div className="flex items-center gap-2 md:gap-3">
@@ -61,7 +61,10 @@ const RecentActivities = () => {
           </span>
         </div>
         <div className="flex items-center gap-2 md:gap-3">
-          <button className="p-2 bg-white/60 rounded-full hover:bg-white/80 transition">
+          <button
+            className="p-2 bg-white/70 rounded-full hover:bg-white transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            aria-label="Filter activities"
+          >
             <HiOutlineAdjustmentsVertical className="text-gray-700 text-lg" />
           </button>
           <Button

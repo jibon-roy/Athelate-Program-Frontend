@@ -4,7 +4,7 @@ import { cn } from "@/src/lib/utils";
 
 // Button variant styles using cva (class-variance-authority)
 const buttonVariants = cva(
-  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center font-semibold transition-colors focus:outline-none active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center cursor-pointer disabled:cursor-not-allowed transition-all justify-center font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       variant: {
@@ -33,11 +33,12 @@ const buttonVariants = cva(
       variant: "primary",
       size: "default",
     },
-  }
+  },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {}
 
 // No Slot, just regular button rendering

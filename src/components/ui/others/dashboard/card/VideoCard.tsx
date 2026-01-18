@@ -20,7 +20,7 @@ const VideoCard = ({
   isCompleted = false,
 }: VideoCardProps) => {
   return (
-    <div className="w-full shadow-[#b2ccff7e] max-w-sm p-3 rounded-2xl overflow-hidden bg-white/40 hover:bg-white mb-6 hover:shadow-lg transition-shadow">
+    <div className="w-full max-w-sm p-4 rounded-[20px] overflow-hidden bg-white/60 hover:bg-white backdrop-blur-[6px] mb-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] transition-all duration-200 ease-out">
       {/* Video Thumbnail */}
       <div className="relative aspect-video w-full h-32 rounded-xl bg-gray-200 overflow-hidden">
         <Image
@@ -40,14 +40,14 @@ const VideoCard = ({
       {/* Card Content */}
       <div className="pt-4">
         {/* Title */}
-        <h3 className="text-base font-semibold text-slate-900 mb-3 line-clamp-2">
+        <h3 className="text-[16px] leading-[22px] font-semibold text-slate-900 mb-3 line-clamp-2">
           {title}
         </h3>
 
         {/* Progress Bar */}
         <div className="mb-3">
           <div className="flex items-center gap-2 mb-2">
-            <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-600 rounded-full transition-all duration-500"
                 style={{ width: `${progress}%` }}

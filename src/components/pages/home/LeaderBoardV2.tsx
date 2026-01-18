@@ -72,7 +72,7 @@ function ListRow({ entry }: { entry: ListEntry }) {
   return (
     <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-white/60 dark:bg-white/10 shadow-sm">
       <div className="flex items-center gap-3">
-      #{entry.rank}
+        #{entry.rank}
         <div className="relative w-10 h-10 md:w-12 md:h-12">
           {/* Diamond avatar with colored border */}
           <div className="absolute inset-0 rotate-45 rounded-lg bg-white border-4 border-[#6CB3FF]"></div>
@@ -104,7 +104,7 @@ const LeaderBoardV2 = () => {
     topThree.find((t) => t.rank === 3)!,
   ];
   return (
-    <section className="w-full p-5 rounded-2xl max-w-5xl bg-white/30 shadow-[1px_1px_0_0_rgba(255,255,255,1),-1px_-1px_0_0_rgba(255,255,255,1)]">
+    <section className="w-full p-5 rounded-[20px] max-w-5xl bg-white/50 backdrop-blur-[6px] shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-xl font-bold">Leaderboard</h2>
@@ -114,9 +114,9 @@ const LeaderBoardV2 = () => {
       </div>
 
       {/* Top 3 section with background */}
-      <div className="rounded-3xl overflow-hidden shadow-lg relative">
+      <div className="rounded-3xl overflow-hidden shadow-[0px_8px_20px_rgba(37,99,235,0.12)] relative">
         {/* Background will be added here */}
-        <div className="relative bg-linear-to-b from-blue-50 to-blue-200/50 p-6 md:p-8">
+        <div className="relative bg-linear-to-b from-[#EAF1FF] to-[#D8E7FF] p-6 md:p-8">
           <p className="text-center text-lg  text-black font-medium">
             Jan 2025
           </p>

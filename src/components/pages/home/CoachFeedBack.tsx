@@ -70,7 +70,7 @@ const CoachFeedBack = () => {
   };
 
   return (
-    <div className="bg-white/40 w-full shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)] rounded-2xl p-4 md:p-6">
+    <div className="bg-white/60 backdrop-blur-[6px] w-full rounded-[20px] p-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)]">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <h3 className="text-lg md:text-xl font-bold text-gray-900">

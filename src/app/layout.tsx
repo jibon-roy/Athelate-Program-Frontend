@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import ReduxStoreProvider from "@/src/redux/ReduxStoreProvider";
-import { Toaster } from "sonner";
+// import { Toaster } from "sonner";
 import bg from "@/src/assets/images/home/bg01.png";
 
 export const metadata: Metadata = {
@@ -177,7 +177,7 @@ export default function RootLayout({
                 {children}
               </div>
             </div>
-            <Toaster />
+            {/* <Toaster /> */}
           </ThemeProvider>
         </ReduxStoreProvider>
       </body>

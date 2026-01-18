@@ -7,6 +7,9 @@ import { LuClipboardList } from "react-icons/lu";
 
 import { LiaCommentDots } from "react-icons/lia";
 import { LuCirclePlay } from "react-icons/lu";
+import playIcon from "@/src/assets/icon/play.png";
+import { BsThreeDotsVertical } from "react-icons/bs";
+import { ShareIcon } from "@/src/components/icon/IconComponents";
 // import { BsThreeDotsVertical } from "react-icons/bs";
 // import { IoMdRepeat } from "react-icons/io";
 
@@ -17,6 +20,7 @@ interface AnnouncementCardProps {
   authorAvatar: string;
   timeAgo: string;
   title: string;
+  type: "image" | "video" | "text";
   coaches?: string[];
   description: string;
   image?: string;
@@ -39,9 +43,10 @@ const AnnouncementCard = ({
   hasRSVP = false,
   likes,
   replies,
+  type,
 }: AnnouncementCardProps) => {
   return (
-    <div className="bg-white rounded-2xl p-4 mb-4 hover:bg-white/80 transition-colors shadow-sm">
+    <div className="bg-white group rounded-2xl p-4 mb-4 hover:bg-white/80 transition-colors shadow-sm">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-2">
@@ -69,10 +74,13 @@ const AnnouncementCard = ({
           </div>
         </div>
 
-        {/* Menu Button
-        <button className="text-gray-500 hover:text-gray-700 p-1">
-          <BsThreeDotsVertical className="text-[18px]" />
-        </button> */}
+        {/* Menu Button */}
+        <div className="flex items-center justify-center">
+          <ShareIcon className="text-[#595F70] hover:text-gray-700 mr-2" />
+          <button className="text-[#595F70] hover:text-gray-700 pt-1">
+            <BsThreeDotsVertical className="text-[18px]" />
+          </button>
+        </div>
       </div>
 
       {/* Content */}
@@ -104,8 +112,26 @@ const AnnouncementCard = ({
 
         {/* Image */}
         {image && (
-          <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-gray-100">
-            <Image src={image} alt={title} fill className="object-cover" />
+          <div className="relative w-full h-55 rounded-xl overflow-hidden bg-gray-100">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover object-top-left max-h-55 hover:scale-105 transition-transform duration-300"
+            />
+            {type === "video" && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/30 transition-colors">
+                <div className="bg-black/30 shadow-[1px_1px_0_0_rgba(255,255,255,0.6),-1px_-1px_0_0_rgba(255,255,255,0.6)] backdrop-blur-xs p-3 rounded-full">
+                  <Image
+                    src={playIcon}
+                    alt="Play Button"
+                    width={24}
+                    height={24}
+                    className="object-contain w-6 h-6"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -115,13 +141,13 @@ const AnnouncementCard = ({
         <div className="flex w-full max-md:flex-wrap items-center gap-3 md:gap-4">
           <div className="flex flex-1 items-center gap-2">
             {isLive && (
-              <button className="flex items-center gap-2 bg-linear-to-r from-[#FF6565] to-[#EC4213] hover:bg-red-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors">
+              <button className="flex items-center gap-2 bg-linear-to-r from-[#FF6565] to-[#EC4213] hover:bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-semibold transition-colors">
                 <LuCirclePlay className="text-base" />
                 Join LIVE
               </button>
             )}
             {hasRSVP && (
-              <button className="flex items-center gap-2 bg-blue-50 hover:bg-[#457FF326] text-[#276AEE] px-4 py-2 rounded-xl text-sm  transition-colors">
+              <button className="flex items-center gap-2 bg-blue-50 hover:bg-[#457FF326] text-[#276AEE] px-4 py-2 rounded-xl text-[10px] transition-colors">
                 <LuClipboardList className="text-base" />
                 RSVP to Practice
               </button>
@@ -132,11 +158,11 @@ const AnnouncementCard = ({
               <span className="text-red-500">
                 <FaHeart className="text-lg" />
               </span>
-              <span className="text-sm font-medium">{likes} Likes</span>
+              <span className="text-[10px] font-medium">{likes} Likes</span>
             </button>
             <button className="flex items-center gap-2 text-gray-600 hover:text-blue-500 transition-colors">
               <LiaCommentDots className="text-lg" />
-              <span className="text-sm font-medium">{replies} Replies</span>
+              <span className="text-[10px] font-medium">{replies} Replies</span>
             </button>
           </div>
         </div>

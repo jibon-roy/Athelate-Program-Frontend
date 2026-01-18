@@ -17,6 +17,7 @@ interface Announcement {
   title: string;
   coaches?: string[];
   description: string;
+  type: "image" | "video" | "text";
   image?: string;
   isLive?: boolean;
   hasRSVP?: boolean;
@@ -35,6 +36,7 @@ const Announcements = () => {
       title: "Live video session",
       coaches: ["COACH GORDAN", "COACH MCCULLUM"],
       description: "Live video session",
+      type: "video",
       image: post1.src,
       isLive: true,
       hasRSVP: true,
@@ -48,6 +50,7 @@ const Announcements = () => {
       authorAvatar: guy2.src,
       timeAgo: "8 hour ago",
       title: "Casual Ride!",
+      type: "image",
       description:
         "Join us for our Friday morning casual bike ride around central park! We will meet you all @6AM EST near Great Lawn Softball Field 7!",
       image: post2.src,

@@ -69,8 +69,53 @@ export function AnalyticsUpIcon(props: IconProps) {
   );
 }
 
+export function ShareIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <path
+        d="M11.1002 3C7.45057 3.00657 5.53942 3.09617 4.31806 4.31754C3 5.63559 3 7.75698 3 11.9997C3 16.2425 3 18.3639 4.31806 19.6819C5.63611 21 7.7575 21 12.0003 21C16.243 21 18.3644 21 19.6825 19.6819C20.9038 18.4606 20.9934 16.5494 21 12.8998"
+        stroke="url(#paint0_linear_1_5632)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        opacity="0.4"
+        d="M20.9995 6.02505L20 6.02252C16.2634 6.01307 14.3951 6.00834 13.0817 6.95241C12.6452 7.26614 12.2622 7.6482 11.9474 8.08388C11 9.39491 11 11.2632 11 14.9998M20.9995 6.02505C21.0062 5.86242 20.9481 5.69881 20.8251 5.55309C20.0599 4.64662 18.0711 2.99976 18.0711 2.99976M20.9995 6.02505C20.9934 6.17087 20.9352 6.31591 20.8249 6.44657C20.0596 7.35286 18.0711 8.99976 18.0711 8.99976"
+        stroke="url(#paint1_linear_1_5632)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_1_5632"
+          x1="10.2422"
+          y1="4.56665"
+          x2="10.6872"
+          y2="14.4922"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#5C8FF7" />
+          <stop offset="1" stopColor="#276AEE" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_1_5632"
+          x1="15.0234"
+          y1="4.04419"
+          x2="15.3791"
+          y2="10.6554"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#5C8FF7" />
+          <stop offset="1" stopColor="#276AEE" />
+        </linearGradient>
+      </defs>
+    </Svg>
+  );
+}
 
- export function Analytics2UpIcon(props: IconProps) {
+export function Analytics2UpIcon(props: IconProps) {
   return (
     <Svg {...props}>
       <path
@@ -98,7 +143,6 @@ export function AnalyticsUpIcon(props: IconProps) {
     </Svg>
   );
 }
-
 
 export function Calendar03Icon(props: IconProps) {
   return (

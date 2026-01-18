@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 import userGroup from "@/src/assets/icon/user-group.png";
 import medal from "@/src/assets/icon/medal-02.png";
+import { MdOutlineTrendingUp } from "react-icons/md";
 
 type BannerCard = {
   id: string;
@@ -197,12 +198,12 @@ const bannerCards: BannerCard[] = [
 const BannerStates = () => {
   return (
     <div className="flex w-full flex-wrap xl:flex-nowrap gap-3 lg:gap-1">
-      {bannerCards.map((card) => {
+      {bannerCards.map((card, idx) => {
         const hasProgress = typeof card.progress === "number";
         return (
           <div
             key={card.id}
-            className="flex min-w-45 flex-1 items-center justify-between gap-4 rounded-2xl border border-black/5 bg-white px-4 py-3"
+            className={`flex min-w-45 flex-1 items-center justify-between gap-4 rounded-2xl border border-black/5 ${idx === 0 ? "max-w-41" : idx === 1 ? "max-w-49.25" : ""} bg-white px-4 py-3`}
           >
             <div className="flex items-center gap-3">
               {card.icon ? (
@@ -226,7 +227,8 @@ const BannerStates = () => {
                     </span>
                     {card.delta ? (
                       <span className="text-xs text-emerald-500">
-                        {card.delta}
+                        {card.delta}{" "}
+                        <MdOutlineTrendingUp className="inline-block mb-0.5" />
                       </span>
                     ) : null}
                   </div>

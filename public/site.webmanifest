@@ -1,12 +1,12 @@
 {
-  "name": "NextJS Starter Pack",
-  "short_name": "NextStarter",
+  "name": "Athlete Program",
+  "short_name": "AthleteProgram",
   "start_url": "/",
   "display": "standalone",
   "scope": "/",
   "background_color": "#ffffff",
   "theme_color": "#0ea5e9",
-  "description": "A minimal, production-ready Next.js starter with TypeScript and sensible defaults. Example site: https://example.com.",
+  "description": "Athlete Program is your go-to platform for personalized coaching, feedback, and community engagement to elevate your athletic performance.",
   "icons": [
     {
       "src": "/icon/180x180.png",

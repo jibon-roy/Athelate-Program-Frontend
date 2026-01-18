@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Athlete Program",
   },
   description:
-    "NextJS Starter Pack — A minimal, production-ready Next.js 16 starter with TypeScript and sensible defaults. Use this as the base for your next app.",
+    "Athlete Program is your go-to platform for personalized coaching, feedback, and community engagement to elevate your athletic performance.",
 
   // Canonical & International URLs
   alternates: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 
   // Application Data
-  applicationName: "NextJS Starter Pack",
+  applicationName: "Athlete Program",
   generator: "Next.js 16",
   referrer: "origin-when-cross-origin",
   keywords: [
@@ -36,21 +36,21 @@ export const metadata: Metadata = {
     "starter pack",
   ],
   authors: [
-    { name: "Example Team", url: "https://example.com/about" },
+    { name: "Athlete Program Team", url: "https://athleteprogram.com/about" },
     { name: "Open Source" },
   ],
-  creator: "Example Team",
-  publisher: "Example Publisher",
+  creator: "Athlete Program Team",
+  publisher: "Athlete Program Publisher",
   category: "Developer Tools / Starter",
   classification: "Software",
 
   // Open Graph (for Facebook, LinkedIn, etc.)
   openGraph: {
-    title: "NextJS Starter Pack | Minimal Next.js Starter",
+    title: "Athlete Program | Personalized Coaching Platform",
     description:
-      "A minimal, production-ready Next.js 16 starter with TypeScript and conventions you can rely on.",
-    url: "https://example.com",
-    siteName: "NextJS Starter Pack",
+      "Athlete Program is your go-to platform for personalized coaching, feedback, and community engagement to elevate your athletic performance.",
+    url: "https://athleteprogram.com",
+    siteName: "Athlete Program",
     locale: "en_US",
     type: "website",
     images: [
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         url: "/icons/1200x630.png",
         width: 1200,
         height: 630,
-        alt: "NextJS Starter Pack OG Image",
+        alt: "Athlete Program OG Image",
       },
     ],
   },
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
   // Twitter Meta (for social sharing)
   twitter: {
     card: "summary_large_image",
-    title: "NextJS Starter Pack | Minimal, production-ready starter",
+    title: "Athlete Program | Personalized Coaching Platform",
     description:
-      "Start your Next.js app with a sensible starter: TypeScript, defaults, and a tidy structure.",
+      "Athlete Program is your go-to platform for personalized coaching, feedback, and community engagement to elevate your athletic performance.",
     creator: "@example",
     site: "@example",
     images: ["https://example.com/og-image.jpg"],
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   // Apple Web App Config
   appleWebApp: {
     capable: true,
-    title: "NextJS Starter Pack",
+    title: "Athlete Program",
     statusBarStyle: "black-translucent",
   },
 
@@ -118,7 +118,7 @@ export const metadata: Metadata = {
     yandex: "EXAMPLE_YANDEX_VERIFICATION",
     yahoo: "EXAMPLE_YAHOO_VERIFICATION",
     other: {
-      me: ["https://example.com", "https://twitter.com/example"],
+      me: ["https://athleteprogram.com", "https://twitter.com/athleteprogram"],
     },
   },
 

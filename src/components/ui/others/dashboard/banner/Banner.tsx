@@ -3,6 +3,7 @@ import BannerStates from "./BannerStates";
 import CheckoutCalender from "../../calender/CheckoutCalender";
 import player from "@/src/assets/images/home/player.png";
 
+
 const Banner = () => {
   return (
     <div

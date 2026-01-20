@@ -74,10 +74,10 @@ const CoachFeedBack = () => {
   };
 
   return (
-    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-4 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <div className="bg-white/30  backdrop-blur-[6px] w-full rounded-[20px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <h3 className="text-lg md:text-[20px] font-bold text-gray-900">
+      <div className="flex  flex-wrap items-center justify-between gap-3 mb-6">
+        <h3 className="text-lg md:text-[20px] font-semibold text-black">
           Coach Feedback
         </h3>
         <Button variant="primary" size="default" className="whitespace-nowrap">
@@ -86,7 +86,7 @@ const CoachFeedBack = () => {
       </div>
 
       {/* Feedback List */}
-      <div className="space-y-3">
+      <div className="space-y-2 overflow-auto max-h-100">
         {feedbacks.map((feedback) => (
           <div
             key={feedback.id}
@@ -108,10 +108,12 @@ const CoachFeedBack = () => {
                 {/* Coach Name and Stars */}
                 <div className="flex items-center flex-start justify-between max-sm:flex-wrap gap-3 mb-2">
                   <div>
-                    <h4 className="text-black text-sm font-semibold">
+                    <h4 className="text-[#141B34] text-[14px] font-medium">
                       {feedback.coachName}
                     </h4>
-                    <p className="text-[#141B34B2] text-xs">{feedback.time}</p>
+                    <p className="text-[#141B34B2] text-[12px]">
+                      {feedback.time}
+                    </p>
                   </div>
                   <div className="sm:ml-4 text-xs">
                     {renderStars(feedback.rating)}

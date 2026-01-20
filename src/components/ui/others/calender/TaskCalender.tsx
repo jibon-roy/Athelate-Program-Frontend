@@ -124,10 +124,10 @@ const TaskCalender = () => {
   }, [currentDate]);
 
   return (
-    <div className="w-full rounded-[20px] max-w-5xl bg-white/30 backdrop-blur-[6px] p-4 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <div className="w-full rounded-[20px] bg-white/30 backdrop-blur-[6px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
-        <h2 className="text-lg md:text-[20px] font-semibold text-slate-900">
+        <h2 className="text-lg md:text-[20px] font-semibold text-black">
           Todays tasks
         </h2>
         <Button variant="primary">View Entire Schedule</Button>
@@ -199,7 +199,7 @@ const TaskCalender = () => {
       </div>
 
       {/* Task List */}
-      <div className="space-y-2 sm:space-y-3">
+      <div className="space-y-2">
         {tasks.map((task, idx) => (
           <div
             key={task.id}
@@ -214,12 +214,12 @@ const TaskCalender = () => {
               {/* Task Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
-                  <h3 className="text-sm sm:text-[14px] font-semibold text-slate-900">
+                  <h3 className="text-sm sm:text-[14px] font-medium text-black">
                     {task.title}
                   </h3>
                   {task.status === "live" && (
-                    <span className="flex items-center gap-1 text-red-500 px-2 py-1 rounded-full text-[11px] font-bold">
-                      <span className="w-2 h-2 bg-red-500 rounded-xs animate-pulse"></span>
+                    <span className="flex items-center gap-1 text-[#FF5252] bg-white px-2 py-1 rounded-lg text-[8px] font-bold">
+                      <span className="w-1.5 h-1.5 bg-[#FF5151] rounded-xs animate-pulse"></span>
                       Live
                     </span>
                   )}

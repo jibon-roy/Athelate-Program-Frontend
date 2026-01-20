@@ -19,14 +19,14 @@ const NavBarV2 = () => {
           <Logo />
         </div>
         <div className="flex-1 md:ml-8">
-          <p className="font-semibold text-black/90 text-sm md:text-[15px]">
+          <p className="font-medium text-black/90 text-sm md:text-[16px]">
             <span className="hidden sm:inline">Welcome Back, Mark</span>
             <span className="sm:hidden">Mark</span>
             <br className="hidden md:block" />
             <span className="text-black/40 text-xs md:text-[14px] hidden lg:inline">
               Overview/
             </span>{" "}
-            <span className="text-xs md:text-[15px] hidden lg:inline">
+            <span className="text-xs md:text-[16px] hidden lg:inline">
               Athlete Program Dashboard
             </span>
           </p>

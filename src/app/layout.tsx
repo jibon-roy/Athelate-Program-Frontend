@@ -165,7 +165,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <ReduxStoreProvider>
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <div className="bg-primary-background ">
+            <div className="bg-primary-background font-inter">
               <div
                 style={{
                   backgroundImage: `url(${bg.src})`,

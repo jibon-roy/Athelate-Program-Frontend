@@ -48,8 +48,8 @@ const RecentActivities = () => {
         />
       ),
       coachName: "Coach Johnny",
-      action: "gave feedback on",
-      description: "your submission",
+      action: "gave feedback on your submission",
+      description: "",
       time: "1min ago",
       showFeedback: true,
     },
@@ -73,15 +73,15 @@ const RecentActivities = () => {
   ]);
 
   return (
-    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-4 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white] mb-6">
+    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white] mb-6">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
         <div className="flex items-center">
-          <h3 className="text-lg md:text-[20px] font-bold text-gray-900">
+          <h3 className="text-lg md:text-[20px] font-semibold font-inter text-gray-900">
             Recent Activity
           </h3>
           <span className="flex items-center gap-1 text-red-500 px-2 py-1 rounded-full text-[11px] font-bold">
-            <span className="w-3.5 h-3.5 bg-red-500 border-3 border-red-300 rounded-full animate-pulse"></span>
+            <span className="w-3 h-3 bg-red-500 border-3 border-red-300 rounded-full animate-pulse"></span>
             LIVE
           </span>
         </div>
@@ -99,7 +99,7 @@ const RecentActivities = () => {
       </div>
 
       {/* Activities List */}
-      <div className="space-y-3">
+      <div className="space-y-2">
         {activities.map((activity) => (
           <div
             key={activity.id}
@@ -112,10 +112,10 @@ const RecentActivities = () => {
             <div className="flex-1">
               <div className="flex justify-between items-start">
                 <div className="flex-1">
-                  <p className="text-black text-sm mb-2 font-semibold">
+                  <p className="text-black text-[14px] mb-1 font-medium">
                     {activity.coachName} <span>{activity.action}</span>
                   </p>
-                  <p className="text-black/70 leading-normal text-xs mt-1">
+                  <p className="text-black/70 leading-normal text-[12px]">
                     {activity.description}
                   </p>
                   {activity.description2 && (

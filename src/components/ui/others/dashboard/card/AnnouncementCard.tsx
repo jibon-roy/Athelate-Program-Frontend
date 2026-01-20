@@ -46,7 +46,7 @@ const AnnouncementCard = ({
   type,
 }: AnnouncementCardProps) => {
   return (
-    <div className="bg-white group rounded-2xl p-4 mb-4 hover:bg-white/80 transition-colors shadow-sm">
+    <div className="bg-white group rounded-2xl p-4 hover:bg-white/80 transition-colors">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-2">
@@ -85,7 +85,7 @@ const AnnouncementCard = ({
 
       {/* Content */}
       <div className="mb-4">
-        <h3 className="text-lg md:text-[20px] font-bold text-[#0F1419] mb-1">
+        <h3 className="text-lg md:text-[20px] font-medium text-[#0F1419] mb-1">
           {title}
         </h3>
 
@@ -105,7 +105,7 @@ const AnnouncementCard = ({
         )}
 
         {!coaches && (
-          <p className="text-gray-700 text-sm leading-relaxed mb-3">
+          <p className="text-[#141B34B2] text-sm leading-relaxed mb-3">
             {description}
           </p>
         )}

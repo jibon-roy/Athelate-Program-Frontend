@@ -136,7 +136,7 @@ function TopCard({ item }: { item: TopEntry }) {
 
 function ListRow({ entry }: { entry: ListEntry }) {
   return (
-    <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-white/60 dark:bg-white/10 shadow-sm">
+    <div className="flex items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-white/60 shadow-sm">
       <div className="flex items-center gap-3">
         <div className="relative w-9 h-9 md:w-10 md:h-10">
           {/* Diamond avatar */}
@@ -166,7 +166,7 @@ const Leaderboard = () => {
     <section className="w-full">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-lg md:text-[18px] font-bold">Leaderboard</h2>
+        <h2 className="text-lg md:text-[20px] font-semibold">Leaderboard</h2>
         <Button>View More</Button>
       </div>
 

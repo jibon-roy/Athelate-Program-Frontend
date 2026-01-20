@@ -76,22 +76,36 @@ function ListRow({ entry }: { entry: ListEntry }) {
   return (
     <div className="flex items-center justify-between gap-4 px-4 py-3 rounded-2xl bg-white  ">
       <div className="flex items-center gap-3">
-        <div className="text-[#141B34] text-sm md:text-[16px] font-semibold">#{entry.rank}</div>
-        <div className="relative -mt-2 -mb-2 mx-2 w-14.5 h-14.5">
-          {/* Diamond avatar with colored border */}
-          <div className="absolute inset-0 rotate-45 rounded-lg  border-4 border-[#6CB3FF]"></div>
-          <div className="absolute inset-1 rotate-45 overflow-hidden rounded-lg">
+        <div className="text-[#141B34] text-sm md:text-[16px] font-medium">
+          #{entry.rank}
+        </div>
+        {entry?.rank === 4 || entry?.rank === 5 ? (
+          <div className="relative -mt-2 -mb-2 mx-2 w-14.5  h-14.5">
+            {/* Diamond avatar with colored border */}
+            <div className="absolute inset-0 bg-[#68B0EA] rotate-45 rounded-lg  border-4 border-[#68B0EA]"></div>
+            <div className="absolute inset-1 rotate-45 overflow-hidden rounded-sm">
+              <Image
+                src={entry.avatar}
+                alt={`${entry.name} avatar`}
+                fill
+                sizes="57px"
+                className="object-cover object-center scale-[1.35] -rotate-45"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="relative  w-14  h-14">
             <Image
               src={entry.avatar}
               alt={`${entry.name} avatar`}
               fill
-              sizes="56px"
-              className="object-cover object-center scale-[1.6] -rotate-45"
+              sizes="57px"
+              className="object-cover object-center rounded-full"
             />
           </div>
-        </div>
+        )}
         <div>
-          <p className="text-sm md:text-[16px] text-[#141B34] font-semibold">
+          <p className="text-sm md:text-[16px] text-[#141B34] font-medium">
             {entry.name}
           </p>
           <p className="text-xs md:text-[14px] text-[#141B34B2]">
@@ -120,7 +134,7 @@ const LeaderBoardV2 = () => {
       {/* Top 3 section with background */}
       <div className="rounded-3xl overflow-hidden relative">
         {/* backgound image */}
-        <div className="relative p-6 md:p-8">
+        <div className="relative bg-white p-6 md:p-6">
           {/* Extend background 5px top/bottom to fully cover the mask */}
           <div className="absolute inset-x-0 -inset-y-1.25">
             <Image
@@ -131,7 +145,7 @@ const LeaderBoardV2 = () => {
               priority
             />
           </div>
-          <p className="relative z-10 text-center text-lg text-black font-medium">
+          <p className="relative z-10 text-center text-[16px] text-[#141B34] font-medium">
             Jan 2025
           </p>
           <div className="relative z-10 flex items-end justify-center gap-2 md:gap-2">

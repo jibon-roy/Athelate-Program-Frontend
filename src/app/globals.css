@@ -38,6 +38,8 @@
   --color-secondary-button-bg1: var(--secondary-button-bg1);
   --color-secondary-button-bg2: var(--secondary-button-bg2);
   --color-secondary-button-border: var(--secondary-button-border);
+
+  --font-inter: "Inter", sans-serif;
 }
 
 /* Class- or attribute-driven dark mode (overrides variables) */
@@ -54,6 +56,7 @@ html.dark,
   --secondary-button-bg1: #dddddd;
   --secondary-button-bg2: #919893;
   --secondary-button-border: #cacaca;
+  
 }
 
 body {

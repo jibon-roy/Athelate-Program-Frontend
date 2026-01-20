@@ -20,7 +20,7 @@ const VideoCard = ({
   isCompleted = false,
 }: VideoCardProps) => {
   return (
-    <div className="w-full max-w-66 p-3 rounded-[20px] overflow-hidden bg-white/60 hover:bg-white backdrop-blur-[6px] mb-6 shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] transition-all duration-200 ease-out">
+    <div className="w-full max-w-66 p-3 rounded-[20px] overflow-hidden bg-white/60 hover:bg-white backdrop-blur-[6px] mb-6 hover:shadow-[0px_10px_24px_rgba(15,23,42,0.08),0px_1px_1px_rgba(0,0,0,0.06)] transition-all duration-200 ease-out">
       {/* Video Thumbnail */}
       <div className="relative aspect-video w-full h-32 rounded-xl bg-gray-200 overflow-hidden">
         <Image
@@ -40,7 +40,7 @@ const VideoCard = ({
       {/* Card Content */}
       <div className="pt-4">
         {/* Title */}
-        <h3 className="text-[16px] leading-5.5 font-semibold text-slate-900 mb-3 line-clamp-2">
+        <h3 className="text-[16px] leading-5.5 font-medium font-inter text-black mb-3 line-clamp-2">
           {title}
         </h3>
 
@@ -49,11 +49,11 @@ const VideoCard = ({
           <div className="flex items-center gap-2 mb-2">
             <div className="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
               <div
-                className="h-full bg-blue-600 rounded-full transition-all duration-500"
+                className="h-full bg-linear-to-r from-[#7180DF] to-[#2C49FF] rounded-full transition-all duration-500"
                 style={{ width: `${progress}%` }}
               />
             </div>
-            <span className="text-xs font-semibold text-slate-600 min-w-fit">
+            <span className="text-xs  text-[#141B34CC] min-w-fit">
               {progress}%
             </span>
           </div>
@@ -76,11 +76,11 @@ const VideoCard = ({
                 <div className="w-2.5 h-2.5 rounded-sm bg-linear-to-b from-primary-button-bg1 to-primary-button-bg2 border border-primary-button-bg1 shrink-0"></div>
               </div>
             )}
-            <span className="text-xs font-medium text-slate-600">
+            <span className="text-[12px]  text-[#141B34CC]">
               {progress}% Complete
             </span>
           </div>
-          <div className="flex items-center gap-1 text-xs font-medium text-slate-600">
+          <div className="flex items-center gap-1 text-[12px]  text-[#141B34CC]">
             <svg
               className="w-4 h-4"
               fill="none"

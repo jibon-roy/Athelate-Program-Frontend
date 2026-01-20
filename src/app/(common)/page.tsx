@@ -12,8 +12,8 @@ export default function Home() {
       <div className="min-h-screen">
         <Banner />
         <div className="grid grid-cols-1 xl:grid-cols-11 gap-4 mt-6">
-          <div className="w-full rounded-3xl xl:col-span-7 shadow-[0px_12px_28px_rgba(17,24,39,0.02),0px_1px_1px_rgba(0,0,0,0.02)]">
-            <div className="w-full  bg-white/30 p-4 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+          <div className="w-full rounded-3xl xl:col-span-7">
+            <div className="w-full  bg-white/30 p-4 h-full rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
               <FeedBackVideos />
               <TaskCalender />
             </div>

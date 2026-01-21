@@ -203,7 +203,7 @@ const BannerStates = () => {
         return (
           <div
             key={card.id}
-            className={`flex min-w-45 flex-1 items-center justify-between gap-4 rounded-2xl border border-black/5 ${idx === 0 ? "max-w-41" : idx === 1 ? "max-w-49.25" : ""} bg-white px-4 py-3`}
+            className={`flex min-w-45 flex-1 items-center justify-between gap-4 rounded-2xl border border-black/5 ${idx === 0 ? "md:max-w-41" : idx === 1 ? "md:max-w-49.25" : ""} bg-white px-4 py-3`}
           >
             <div className="flex items-center gap-3">
               {card.icon ? (

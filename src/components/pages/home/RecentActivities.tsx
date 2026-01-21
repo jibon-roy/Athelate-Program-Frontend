@@ -73,7 +73,7 @@ const RecentActivities = () => {
   ]);
 
   return (
-    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white] mb-6">
+    <div className="bg-white/30 backdrop-blur-[6px] w-full rounded-[20px] p-4 sm:p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white] mb-6">
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
         <div className="flex items-center">
@@ -103,7 +103,7 @@ const RecentActivities = () => {
         {activities.map((activity) => (
           <div
             key={activity.id}
-            className="flex hover:bg-white/40 p-2 rounded-xl gap-4"
+            className="flex hover:bg-white/40 p-2 flex-wrap rounded-xl gap-4"
           >
             {/* Icon */}
             <div>{activity.icon}</div>

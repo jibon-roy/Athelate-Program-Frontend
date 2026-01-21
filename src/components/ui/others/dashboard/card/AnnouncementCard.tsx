@@ -46,7 +46,7 @@ const AnnouncementCard = ({
   type,
 }: AnnouncementCardProps) => {
   return (
-    <div className="bg-white group rounded-2xl p-5 hover:bg-white/80 transition-colors">
+    <div className="bg-white group rounded-2xl p-4 sm:p-5 hover:bg-white/80 transition-colors">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-2">

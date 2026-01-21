@@ -1,10 +1,13 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-import rank1 from "@/src/assets/images/home/1.png";
-import rank2 from "@/src/assets/images/home/2.png";
-import rank3 from "@/src/assets/images/home/3.png";
+import frame1 from "@/src/assets/images/card/card1.svg";
+import frame2 from "@/src/assets/images/card/card2.svg";
+import frame3 from "@/src/assets/images/card/card3.svg";
 
+import p1 from "@/src/assets/images/home/player/1.png";
+import p2 from "@/src/assets/images/home/player/2.png";
+import p3 from "@/src/assets/images/home/player/3.png";
 import f0 from "@/src/assets/images/home/player/player1.png";
 import f1 from "@/src/assets/images/home/player/player2.png";
 import f2 from "@/src/assets/images/home/player/player3.png";
@@ -28,9 +31,9 @@ type ListEntry = {
 };
 
 const topThree: TopEntry[] = [
-  { rank: 1, name: "Marcus Williams", points: 327, image: rank1 },
-  { rank: 2, name: "Cameron C.", points: 293, image: rank2 },
-  { rank: 3, name: "Cameron C.", points: 238, image: rank3 },
+  { rank: 1, name: "Marcus Williams", points: 327, image: p1 },
+  { rank: 2, name: "Cameron C.", points: 293, image: p2 },
+  { rank: 3, name: "Cameron C.", points: 238, image: p3 },
 ];
 
 const others: ListEntry[] = [
@@ -41,32 +44,88 @@ const others: ListEntry[] = [
   { rank: 8, name: "Esther Howard", points: 172, avatar: f4 },
 ];
 
-function TopCard({ item }: { item: TopEntry }) {
+function TopCard({ item, orderClass }: { item: TopEntry; orderClass: string }) {
   const isTop = item.rank === 1;
   const containerWidth = isTop
-    ? "w-[40%] md:w-[36%] lg:w-[40%]"
-    : "w-[28%] md:w-[26%] lg:w-[24%]";
+    ? "w-[80%] md:w-[36%] lg:w-[40%]"
+    : "w-[60%] md:w-[26%] lg:w-[24%]";
   const imageSizes = isTop
     ? "(max-width: 768px) 60vw, 30vw"
-    : "(max-width: 768px) 40vw, 20vw";
+    : "(max-width: 768px) 60vw, 30vw";
+  const aspectPad = isTop ? "pt-[112%]" : "pt-[112%]";
+  const imageWindow = isTop
+    ? "inset-x-[20%] top-[20%] bottom-[18%]"
+    : "inset-x-[8%] top-[25%] -bottom-[5%] right-[15%]";
 
   return (
-    <div className={`flex flex-col items-center ${containerWidth}`}>
-      <div className="relative w-full  overflow-hidden">
-        <Image
-          src={item.image}
-          alt={`${item.name} rank ${item.rank}`}
-          sizes={imageSizes}
-          className="w-full h-auto"
-        />
-      </div>
-      <div className="mt-3 text-center">
-        {/* <p className="text-sm md:text-base font-semibold text-gray-900 dark:text-white">
-          {item.name}
-        </p>
-        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400">
-          {item.points} points
-        </p> */}
+    <div
+      draggable={false}
+      className={`flex mb-5 pb-20 flex-col items-center justify-end ${containerWidth} ${orderClass}`}
+    >
+      <div className="relative h-fit w-full ">
+        <div className={`relative w-full ${aspectPad}`}>
+          <div className={`absolute ${imageWindow}`}>
+            <Image
+              src={item.image}
+              alt={`${item.name} photo`}
+              fill
+              draggable={false}
+              className={`object-cover w-full object-top`}
+            />
+          </div>
+        </div>
+        {item.rank === 1 ? (
+          <Image
+            src={frame1}
+            alt={`${item.name} rank ${item.rank}`}
+            sizes={imageSizes}
+            draggable={false}
+            className="w-full h-auto absolute inset-0"
+          />
+        ) : item.rank === 2 ? (
+          <Image
+            src={frame2}
+            alt={`${item.name} rank ${item.rank}`}
+            sizes={imageSizes}
+            draggable={false}
+            className="w-full h-auto absolute inset-0"
+          />
+        ) : (
+          <Image
+            src={frame3}
+            alt={`${item.name} rank ${item.rank}`}
+            sizes={imageSizes}
+            draggable={false}
+            className="w-full h-auto absolute inset-0"
+          />
+        )}
+
+        {item?.rank === 2 && (
+          <div className="z-50 absolute max-md:-bottom-[43%] md:-bottom-[45%] -ml-1 min-w-10/12 left-1/2 -translate-x-1/2 text-center">
+            <p className="text-sm font-semibold text-[#141B34] dark:text-white">
+              {item.name}
+            </p>
+            <p className={`font-bold mt-2.5 text-[#141B34]/80`}>
+              {item.points}
+            </p>
+          </div>
+        )}
+        {item?.rank === 1 && (
+          <div className="z-50 absolute max-md:bottom-[15%] md:-bottom-[17.5%] left-1/2 -translate-x-1/2 text-center">
+            <p className={`font-bold mb-2  text-white`}>{item.points}</p>
+            <p className=" font-semibold text-[#276AEE] italic dark:text-white max-w-20">
+              {item.name}
+            </p>
+          </div>
+        )}
+        {item?.rank === 3 && (
+          <div className="z-50 absolute max-md:bottom-[9%] md:-bottom-[40%] min-w-20 -ml-1 left-1/2 -translate-x-1/2 text-center">
+            <p className="text-sm font-semibold text-[#141B34] dark:text-white">
+              {item.name}
+            </p>
+            <p className={`font-bold mt-2.5 text-white`}>{item.points}</p>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -75,7 +134,9 @@ function TopCard({ item }: { item: TopEntry }) {
 function ListRow({ entry }: { entry: ListEntry }) {
   return (
     <div className="flex items-center justify-between gap-4 px-4 py-3 rounded-2xl bg-white  ">
-      <div className="flex items-center gap-3">
+      <div
+        className={`flex items-center ${entry?.rank === 4 || entry?.rank === 5 ? "gap-3" : "gap-5"}`}
+      >
         <div className="text-[#141B34] text-sm md:text-[16px] font-medium">
           #{entry.rank}
         </div>
@@ -88,6 +149,8 @@ function ListRow({ entry }: { entry: ListEntry }) {
                 src={entry.avatar}
                 alt={`${entry.name} avatar`}
                 fill
+                // optimize false
+                unoptimized
                 sizes="57px"
                 className="object-cover object-center scale-[1.35] -rotate-45"
               />
@@ -123,8 +186,15 @@ const LeaderBoardV2 = () => {
     topThree.find((t) => t.rank === 1)!,
     topThree.find((t) => t.rank === 3)!,
   ];
+
+  const orderClasses = {
+    2: "order-1 sm:order-1",
+    1: "order-0 sm:order-2",
+    3: "order-2 sm:order-3",
+  } as const;
+
   return (
-    <section className="w-full p-5 bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <section className="w-full p-4 sm:p-5 bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-[18px] font-bold">Leaderboard</h2>
@@ -148,16 +218,20 @@ const LeaderBoardV2 = () => {
           <p className="relative z-10 text-center text-[16px] text-[#141B34] font-medium">
             Jan 2025
           </p>
-          <div className="relative z-10 flex items-end justify-center gap-2 md:gap-2">
+          <div className="relative z-10 flex flex-col sm:flex-row items-center md:items-end justify-center gap-2 md:gap-2">
             {orderedTop.map((t) => (
-              <TopCard key={t.rank} item={t} />
+              <TopCard
+                key={t.rank}
+                item={t}
+                orderClass={orderClasses[t.rank]}
+              />
             ))}
           </div>
         </div>
       </div>
 
       {/* Others list */}
-      <div className="mt-6 space-y-3">
+      <div className="mt-6 space-y-3.5">
         {others.map((o) => (
           <ListRow key={o.rank} entry={o} />
         ))}

@@ -16,7 +16,7 @@ const weekItems = [
 const CheckoutCalender = () => {
   return (
     <div className="w-full sm:max-w-82.5 rounded-3xl  bg-linear-to-t from-white via-white to-white/80 p-4 shadow-[0_18px_45px_rgba(17,24,39,0.08)]">
-      <div className="flex items-start justify-between gap-8">
+      <div className="flex items-start justify-between flex-wrap gap-3 md:gap-8">
         <div>
           <p className="text-xs font-semibold tracking-wide text-black mt-3">
             Active Streak
@@ -42,7 +42,7 @@ const CheckoutCalender = () => {
         </div>
       </div>
 
-      <div className="mt-2 flex items-center gap-4 justify-between">
+      <div className="mt-2 flex items-center sm:gap-4 justify-between">
         {weekItems?.map((item, id) => (
           <div
             key={`${item.label}-${id}`}

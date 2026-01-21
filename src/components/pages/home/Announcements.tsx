@@ -64,7 +64,7 @@ const Announcements = () => {
   return (
     <div className="w-full  bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
-      <div className="flex p-5 bg-white/40 rounded-t-[20px] items-center justify-between">
+      <div className="flex p-4 sm:p-5 bg-white/40 rounded-t-[20px] items-center justify-between">
         <h2 className="text-lg md:text-[18px] font-semibold text-[#141B34]">
           Announcements preview
         </h2>
@@ -76,7 +76,7 @@ const Announcements = () => {
           View More
         </Button>
       </div>
-      <div className="p-5">
+      <div className="p-4 sm:p-5">
         {/* Announcements List */}
         <div className="space-y-4">
           {announcements.map((announcement) => (

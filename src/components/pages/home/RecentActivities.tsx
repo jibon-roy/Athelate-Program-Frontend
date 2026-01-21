@@ -77,11 +77,11 @@ const RecentActivities = () => {
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
         <div className="flex items-center">
-          <h3 className="text-lg md:text-[20px] font-semibold font-inter text-gray-900">
+          <h3 className="text-lg md:text-[20px] font-semibold font-inter text-[#141B34]">
             Recent Activity
           </h3>
-          <span className="flex items-center gap-1 text-red-500 px-2 py-1 rounded-full text-[11px] font-bold">
-            <span className="w-3 h-3 bg-red-500 border-3 border-red-300 rounded-full animate-pulse"></span>
+          <span className="flex items-center gap-1 text-[#F20004] px-2 py-1 rounded-full text-[11px] font-bold">
+            <span className="w-3 h-3 bg-[linear-gradient(160deg,#FF6565_0%,#EC4213_100%)] border-3 border-[#FFC8C8] rounded-full animate-pulse"></span>
             LIVE
           </span>
         </div>
@@ -90,7 +90,7 @@ const RecentActivities = () => {
             className="p-2 bg-white/70 rounded-full hover:bg-white transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             aria-label="Filter activities"
           >
-            <HiOutlineAdjustmentsVertical className="text-gray-700 text-lg" />
+            <HiOutlineAdjustmentsVertical className="text-[#343330] text-lg" />
           </button>
           <Button variant="primary" size="default">
             View More

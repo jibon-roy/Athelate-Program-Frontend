@@ -46,7 +46,7 @@ const AnnouncementCard = ({
   type,
 }: AnnouncementCardProps) => {
   return (
-    <div className="bg-white group rounded-2xl p-4 hover:bg-white/80 transition-colors">
+    <div className="bg-white group rounded-2xl p-5 hover:bg-white/80 transition-colors">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start gap-2">
@@ -141,7 +141,7 @@ const AnnouncementCard = ({
         <div className="flex w-full max-md:flex-wrap items-center gap-3 md:gap-4">
           <div className="flex flex-1 items-center gap-2">
             {isLive && (
-              <button className="flex items-center gap-2 bg-linear-to-r from-[#FF6565] to-[#EC4213] hover:bg-red-600 text-white px-4 py-2 rounded-xl text-[10px] font-semibold transition-colors">
+              <button className="flex items-center gap-2 bg-linear-to-r from-[#FF6565] to-[#EC4213] hover:bg-[#EC4213] text-white px-4 py-2 rounded-xl text-[10px] font-semibold transition-colors">
                 <LuCirclePlay className="text-base" />
                 Join LIVE
               </button>
@@ -155,7 +155,7 @@ const AnnouncementCard = ({
           </div>
           <div className="flex justify-end items-center gap-6">
             <button className="flex items-center gap-2 text-gray-600  transition-colors">
-              <span className="text-red-500">
+              <span className="text-[#FF3939]">
                 <FaHeart className="text-lg" />
               </span>
               <span className="text-[10px] font-medium">{likes} Likes</span>

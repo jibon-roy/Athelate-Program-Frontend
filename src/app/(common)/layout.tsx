@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-360 mx-auto">
         <NavBarV2 />
         <div className="flex gap-4 md:gap-6">
           <div>

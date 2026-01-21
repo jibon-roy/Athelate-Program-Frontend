@@ -124,7 +124,7 @@ const LeaderBoardV2 = () => {
     topThree.find((t) => t.rank === 3)!,
   ];
   return (
-    <section className="w-full p-4 bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <section className="w-full p-5 bg-white/30 rounded-3xl overflow-auto shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-lg md:text-[18px] font-bold">Leaderboard</h2>

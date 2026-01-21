@@ -55,8 +55,8 @@ const CoachFeedBack = () => {
             key={star}
             className={`w-4.5 h-4.5 ${
               star <= rating
-                ? "text-orange-400 fill-orange-400"
-                : "text-orange-400 fill-none"
+                ? "text-[#FF8C1A] fill-[#FF8C1A]"
+                : "text-[#FF8C1A] fill-none"
             }`}
             viewBox="0 0 24 24"
             stroke="currentColor"

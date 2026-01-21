@@ -37,7 +37,7 @@ const NavBarV2 = () => {
           value={searchValue}
           onChange={setSearchValue}
           placeholder="Search"
-          className="hidden lg:flex  w-full max-w-sm"
+          className="hidden lg:flex  w-full max-w-100"
         />
 
         {/* Mobile Search Icon */}
@@ -67,7 +67,7 @@ const NavBarV2 = () => {
             aria-label="View notifications"
           >
             <Bell className="h-5 w-5" />
-            <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-red-500 ring-2 ring-white" />
+            <span className="absolute right-2 top-2 flex items-center justify-center text-white h-2.5 w-2.5 rounded-full bg-[#E21212] text-[6px]">6</span>
           </button>
 
           <Link

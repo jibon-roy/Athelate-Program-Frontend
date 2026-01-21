@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import ReduxStoreProvider from "@/src/redux/ReduxStoreProvider";
 // import { Toaster } from "sonner";
-import bg from "@/src/assets/images/home/bg01.png";
+import bg from "@/src/assets/images/home/bg00.png";
 
 export const metadata: Metadata = {
   // Basic Info
@@ -172,7 +172,7 @@ export default function RootLayout({
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
-                className="px-6 md:px-8 max-w-360 mx-auto"
+                className="px-5 md:px-8 max-w-360 mx-auto"
               >
                 {children}
               </div>

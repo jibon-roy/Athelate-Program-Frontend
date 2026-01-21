@@ -15,7 +15,7 @@ const weekItems = [
 
 const CheckoutCalender = () => {
   return (
-    <div className="w-full max-w-82.5 rounded-3xl  bg-linear-to-t from-white via-white to-white/80 p-4 shadow-[0_18px_45px_rgba(17,24,39,0.08)]">
+    <div className="w-full sm:max-w-82.5 rounded-3xl  bg-linear-to-t from-white via-white to-white/80 p-4 shadow-[0_18px_45px_rgba(17,24,39,0.08)]">
       <div className="flex items-start justify-between gap-8">
         <div>
           <p className="text-xs font-semibold tracking-wide text-black mt-3">
@@ -32,11 +32,11 @@ const CheckoutCalender = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <span className="rounded-full bg-linear-to-r from-[#FDB631] to-[#EC4213] px-4 py-3 text-xs font-semibold text-white shadow-sm">
+        <div className="flex items-center">
+          <span className="rounded-full h-10 bg-[linear-gradient(160deg,#FDB631_0%,#EC4213_60%)]  px-4 py-3 text-xs font-semibold text-white shadow-inner">
             Hot Streak
           </span>
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-lg">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-lg">
             🔥
           </span>
         </div>

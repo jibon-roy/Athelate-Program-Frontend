@@ -6,9 +6,9 @@ import frame2 from "@/src/assets/images/frames/frame2.png";
 import frame3 from "@/src/assets/images/frames/frame3.png";
 
 import player from "@/src/assets/images/home/player.png";
-import f0 from "@/src/assets/images/card/f0.png";
-import f1 from "@/src/assets/images/card/f1.png";
-import f2 from "@/src/assets/images/card/f2.png";
+import f0 from "@/src/assets/images/card/card1.svg";
+import f1 from "@/src/assets/images/card/card2.svg";
+import f2 from "@/src/assets/images/card/card3.svg";
 import { Button } from "../../ui/button/Button";
 
 type TopEntry = {

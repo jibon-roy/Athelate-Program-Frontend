@@ -74,7 +74,7 @@ const CoachFeedBack = () => {
   };
 
   return (
-    <div className="bg-white/30  backdrop-blur-[6px] w-full rounded-[20px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <div className="bg-white/30  backdrop-blur-[6px] w-full rounded-[20px] p-4 sm:p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex  flex-wrap items-center justify-between gap-3 mb-6">
         <h3 className="text-lg md:text-[20px] font-semibold text-black">
@@ -92,7 +92,7 @@ const CoachFeedBack = () => {
             key={feedback.id}
             className="p-3 rounded-2xl bg-white/40 hover:bg-white/60"
           >
-            <div className="flex mb-2 gap-4">
+            <div className="flex flex-wrap mb-2 gap-4">
               {/* Coach Avatar */}
               <div className="relative w-10 h-10 rounded-full bg-linear-to-br from-gray-200 to-gray-400 shrink-0 overflow-hidden">
                 <Image

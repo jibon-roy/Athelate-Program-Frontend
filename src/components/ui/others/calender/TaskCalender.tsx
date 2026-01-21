@@ -124,7 +124,7 @@ const TaskCalender = () => {
   }, [currentDate]);
 
   return (
-    <div className="w-full rounded-[20px] bg-white/30 backdrop-blur-[6px] p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
+    <div className="w-full rounded-[20px] bg-white/30 backdrop-blur-[6px] p-4 sm:p-5 shadow-[1px_1px_0_0_white,-1px_-1px_0_0_white]">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
         <h2 className="text-lg md:text-[20px] font-semibold text-black">
@@ -246,7 +246,7 @@ const TaskCalender = () => {
             </div>
 
             {/* Right Section: Status + Button */}
-            <div className="flex items-center gap-2 sm:gap-3 md:gap-5 sm:ml-4 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-5 sm:ml-4 w-full sm:w-auto">
               {/* Status Text with Icon */}
               <div className="flex items-center gap-1.5 sm:gap-2 text-[12px] text-gray-600 min-w-20 sm:min-w-30 justify-start">
                 {task.status === "due" && (
